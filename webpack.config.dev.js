@@ -84,11 +84,11 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(gif|png|jpe?g|svg)$/i,
+                test: /\.(gif|png|jpe?g)$/i,
                 use: [
                     {
                         loader: 'file-loader',
-                        options: { name: 'img/[name].[ext]' }
+                        options: { name: 'img/[name].[ext]' },
                     },
                     'image-webpack-loader'
                 ],
