@@ -1,9 +1,10 @@
 import React from 'react';
+import { OoopsText } from '../styled.js';
 
-let ErrorFallback = () => (
-  <h2 className='ooops-text'>
+const ErrorFallback = () => (
+  <OoopsText>
     Ooops, something went wrong... We are doing our best to fix the issue
-  </h2>
+  </OoopsText>
 );
 
 export default ErrorFallback;

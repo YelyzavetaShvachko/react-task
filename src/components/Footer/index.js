@@ -1,13 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Footer } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 
-const Footer = styled.footer`
-    background-color: #424242;
-    padding: 25px;
-`;
-
-let StyledBlock = () => (
+const StyledBlock = () => (
   <Footer>
     <Logo />
   </Footer>

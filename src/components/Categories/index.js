@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Category from '../Category';
+import { CategoriesWrapper } from '../styled.js';
 
-let categories = [
+const categories = [
   {
     title: 'ALL',
     styleName: 'category active',
@@ -30,11 +30,7 @@ let categories = [
   }
 ];
 
-const CategoriesWrapper = styled.div`
-    display: flex;
-`;
-
-let StyledBlock = () => (
+const StyledBlock = () => (
   <CategoriesWrapper>
     {categories.map((category) =>
       <Category

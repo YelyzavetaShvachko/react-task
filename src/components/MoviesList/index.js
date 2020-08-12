@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { MoviesSection, Navigation, MoviesWrapper } from '../styled.js';
 import MovieCard from '../MovieCard';
 import Categories from '../Categories';
 import SearchResults from '../SearchResults';
@@ -58,34 +58,7 @@ let movies = [
   }
 ];
 
-const MoviesSection = styled.section`
-    background-color: #232323;  
-`;
-
-const Navigation = styled.nav`
-    border-bottom: 2px solid #4c4c4c;
-    position:relative;
-    display: flex;
-    justify-content: space-between;
-
-    &:after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 100%;
-        background: #000000;
-        position: absolute;
-        bottom: -4px;
-  }
-`;
-
-const MoviesWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-`;
-
-let StyledBlock = () => (
+const StyledBlock = () => (
   <MoviesSection className='content'>
     <Navigation className='container'>
       <Categories />
