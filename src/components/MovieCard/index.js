@@ -1,23 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
+import MovieIcon from '../MovieIcon';
 import PropTypes from 'prop-types';
 
-const StyledBlock = ({ title, year, genre, photo }) => (
-  <MovieCard>
-    <Image src={photo} />
-    <DescriptionWrapper>
-      <h3>{title}</h3>
-      <Genre>{genre}</Genre>
-      <Year>{year}</Year>
-    </DescriptionWrapper>
-  </MovieCard>
-);
+export default class MovieCardWrapper extends Component {
+  constructor(props) {
+    super(props);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false,
+    };
+  }
 
-StyledBlock.propTypes = {
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
+
+  render() {
+    return (
+      <MovieCard
+        onMouseEnter={this.handleMouseHover}
+        onMouseLeave={this.handleMouseHover}
+      >
+        <Image src={this.props.photo} />
+        {this.state.isHovering && <MovieIcon/>}
+        <DescriptionWrapper>
+          <h3>{this.props.title}</h3>
+          <Genre>{this.props.genre}</Genre>
+          <Year>{this.props.year}</Year>
+        </DescriptionWrapper>
+      </MovieCard>
+    );
+  }
+}
+
+MovieCardWrapper.propTypes = {
   title: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired, 
   genre: PropTypes.string.isRequired, 
   photo: PropTypes.string.isRequired, 
 };
-
-export default StyledBlock;
