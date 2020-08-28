@@ -25,10 +25,7 @@ export default class MovieCardWrapper extends Component {
   render() {
     return (
       <MovieCard
-        onMouseEnter={() => {
-          console.log('mouse enter ');
-          this.setState({isHovering: true});
-        }}
+        onMouseEnter={() => this.setState({isHovering: true})}
         onMouseLeave={() => this.setState({isHovering: false})}
       >
         <Image src={this.props.photo} />
