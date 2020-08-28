@@ -3,62 +3,29 @@ import { MovieModal, MovieModalClose, MovieModalBtn } from '../styled.js';
 import Modal from '../Modal';
 import EditMovieContent from '../EditMovieContent';
 import DeleteMovieContent from '../DeleteMovieContent';
+import useModalStatus from '../../hooks/modalHelper';
 
-class MovieModalContent extends React.Component {
-  constructor() {
-    super();
-    // this.handler = this.handler.bind(this);
-    this.state = {
-      showEdit: false,
-      showDelete: false
-    };
-  }
-
-  // handler(param) {
-  //   this.setState({
-  //     show: param
-  //   });
-  // }
-
-  showModal = () => {
-    this.setState({
-      showEdit: !this.state.showEdit,
-      showDelete: !this.state.showDelete
-    });
-  };
-
-  close = () => {
-    this.setState({
-      showEdit: false,
-      showDelete: false
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <MovieModal>
-          <MovieModalClose onClick={this.props.action.bind(this, false)} />
-          {
-            this.state.showEdit ? 
-              <Modal onClose={this.close} show={this.state.showEdit}>
-                <EditMovieContent />
-              </Modal>
-              : null
-          }
-          <MovieModalBtn onClick={() => { this.setState({ showEdit: !this.state.showEdit }); }}>Edit</MovieModalBtn>
-          {
-            this.state.showDelete ? 
-              <Modal onClose={this.close} show={this.state.showDelete}>
-                <DeleteMovieContent />
-              </Modal>
-              : null
-          }
-          <MovieModalBtn onClick={() => { this.setState({ showDelete: !this.state.showDelete }); }}>Delete</MovieModalBtn>
-        </MovieModal>
-      </>
-    );
-  }
-}
+const MovieModalContent = () => {
+  const [modalContent, setModalContent] = useModalStatus();
+  return (
+    <>
+      <MovieModal>
+        <MovieModalClose onClick={() => {setModalContent(null);}} />
+        <Modal
+          onClose={() => {setModalContent(null);}}
+          show={(modalContent && modalContent.key === 'edit')}>
+          <EditMovieContent />
+        </Modal>
+        <MovieModalBtn onClick={() => {setModalContent({key: 'edit', movie: 1});}}>Edit</MovieModalBtn>
+        <Modal
+          onClose={() => {setModalContent(null);}}
+          show={(modalContent && modalContent.key === 'delete')}>
+          <DeleteMovieContent />
+        </Modal>
+        <MovieModalBtn onClick={() => {setModalContent({key: 'delete', movie: 1});}}>Delete</MovieModalBtn>
+      </MovieModal>
+    </>
+  );
+};
 
 export default MovieModalContent;

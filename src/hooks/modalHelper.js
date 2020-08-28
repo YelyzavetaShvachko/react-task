@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { ModalContext } from '../state/context';
+import { useState } from 'react';
 
 function useModalStatus() {
-  const { isOpened, setOpen } = useContext(ModalContext);
-  return [isOpened, setOpen];
+  const  [modalContent,setModalContent] = useState(null); // {key: "edit", value: 1}
+  return [modalContent,setModalContent];
 }
 
 export default useModalStatus;
