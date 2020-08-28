@@ -23,6 +23,7 @@ function App() {
           <MoviesList />
         </ErrorBoundary>
         <Footer />
+        {/* <ModalsList /> */}
       </ModalProvider>
     </>
   );

@@ -22,9 +22,7 @@ class StyledBlock extends React.Component {
         <header className='header container'>
           <Logo />
           <AddMovie
-            onClick={e => {
-              this.showModal(e);
-            }}
+            showModal={this.showModal}
           />
           <Modal onClose={this.showModal} show={this.state.show}>
             <AddMovieContent />
