@@ -26,6 +26,14 @@ class MovieModalContent extends React.Component {
       showDelete: !this.state.showDelete
     });
   };
+
+  close = () => {
+    this.setState({
+      showEdit: false,
+      showDelete: false
+    });
+  };
+
   render() {
     return (
       <>
@@ -33,7 +41,7 @@ class MovieModalContent extends React.Component {
           <MovieModalClose onClick={this.props.action.bind(this, false)} />
           {
             this.state.showEdit ? 
-              <Modal onClose={this.showModal} show={this.state.showEdit}>
+              <Modal onClose={this.close} show={this.state.showEdit}>
                 <EditMovieContent />
               </Modal>
               : null
@@ -41,10 +49,10 @@ class MovieModalContent extends React.Component {
           <MovieModalBtn onClick={() => { this.setState({ showEdit: !this.state.showEdit }); }}>Edit</MovieModalBtn>
           {
             this.state.showDelete ? 
-            <Modal onClose={this.showModal} show={this.state.showDelete}>
+              <Modal onClose={this.close} show={this.state.showDelete}>
                 <DeleteMovieContent />
               </Modal>
-            : null
+              : null
           }
           <MovieModalBtn onClick={() => { this.setState({ showDelete: !this.state.showDelete }); }}>Delete</MovieModalBtn>
         </MovieModal>

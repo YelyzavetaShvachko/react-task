@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalTitle, ModalForm, FormItem, FormInput, BtnWrapper, SubmitBtn, CancelBtn } from '../styled.js';
+import { ModalTitle, ModalForm, FormItem, BtnWrapper, SubmitBtn } from '../styled.js';
 
 class StyledBlock extends React.Component {
   render() {
