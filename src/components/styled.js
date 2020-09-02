@@ -76,6 +76,7 @@ export const MovieCard = styled.div`
     width: 30%;
     margin-bottom: 50px;
     color: #a2a2a2;
+    position: relative;
 `;
 
 export const Image = styled.img`
@@ -191,4 +192,154 @@ export const OoopsText = styled.h2`
     color: #e40909;
     margin-bottom: 8px;
     text-align: center;
+`;
+
+//modals with form
+export const ModalBackground = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+`;
+
+export const ModalWindow = styled.div`
+    position: fixed;
+    color: #ffffff;
+    background: #232323;
+    width: 65%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    padding: 50px 60px;
+`;
+
+export const ModalClose = styled.div`
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    &:after, &:before {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #ffffff;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+`;
+
+export const ModalTitle = styled.h3`
+    font-size: 32px;
+`;
+
+export const ModalForm = styled.form`
+    display: flex;
+    flex-wrap: wrap;
+`;
+
+export const FormItem = styled.label`
+    display: block;
+    color: #f65261;
+    width: 100%;
+    font-size: 16px;
+    margin: 8px 0;
+`;
+
+export const FormInput = styled.input`
+    display: block;
+    width: 100%;
+    background: #424242;
+    padding: 10px;
+    margin-top: 5px;
+    color: #ffffff;
+`;
+
+export const BtnWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 60px;
+`;
+
+export const SubmitBtn = styled.button`
+    padding: 10px 30px;
+    border-radius: 3px;
+    color: #ffffff;
+    background: #f65261;
+`;
+
+export const CancelBtn = styled.button`
+    background: transparent;
+    color: #f65261;
+    border: 1px solid #f65261;
+    padding: 10px 30px;
+    margin-right: 10px;
+    border-radius: 3px;
+`;
+
+// movie modal
+export const MovieIcon = styled.div`
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: #232323;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+`;
+
+export const MovieModal = styled.div`
+padding-top: 30px;
+    width: 200px;
+    height: 120px;
+    background: #232323;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9;
+`;
+
+export const MovieModalClose = styled.div`
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 9;
+    &:after, &:before {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 15px;
+        width: 2px;
+        background-color: #ffffff;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+`;
+
+export const MovieModalBtn = styled.div`
+    width: 100%;
+    padding: 5px 0 5px 35px;
+    color: #ffffff;
+    &:hover {
+        background: #f65261;
+    }
 `;
