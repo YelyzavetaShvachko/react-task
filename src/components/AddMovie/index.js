@@ -1,8 +1,8 @@
 import React from 'react';
 import { AddMovie } from '../styled.js';
 
-const StyledBlock = ({showModal}) => (
+const AddMovieButton = ({showModal}) => (
   <AddMovie onClick={showModal}>+ ADD MOVIE</AddMovie>
 );
 
-export default StyledBlock;
+export default AddMovieButton;

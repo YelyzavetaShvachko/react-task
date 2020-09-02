@@ -2,10 +2,10 @@ import React from 'react';
 import { Footer } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 
-const StyledBlock = () => (
+const FooterBlock = () => (
   <Footer>
     <Logo />
   </Footer>
 );
 
-export default StyledBlock;
+export default FooterBlock;

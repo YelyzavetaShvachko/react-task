@@ -30,7 +30,7 @@ const categories = [
   }
 ];
 
-const StyledBlock = () => (
+const CategoriesSection = () => (
   <CategoriesWrapper>
     {categories.map((category) =>
       <Category
@@ -42,4 +42,4 @@ const StyledBlock = () => (
   </CategoriesWrapper>
 );
 
-export default StyledBlock;
+export default CategoriesSection;

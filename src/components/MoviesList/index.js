@@ -58,7 +58,7 @@ let movies = [
   }
 ];
 
-const StyledBlock = () => (
+const MoviesList = () => (
   <MoviesSection className='content'>
     <Navigation className='container'>
       <Categories />
@@ -79,4 +79,4 @@ const StyledBlock = () => (
   </MoviesSection>
 );
 
-export default StyledBlock;
+export default MoviesList;
