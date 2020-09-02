@@ -9,7 +9,6 @@ import useModalStatus from '../../hooks/modalHelper';
 
 const Header = () => {
   const [modalContent, setModalContent] = useModalStatus();
-  console.log('header');
   return (
     <>
       <Background />
