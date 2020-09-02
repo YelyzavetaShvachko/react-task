@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieModal, MovieModalClose, MovieModalBtn } from '../styled.js';
+import { MovieModal, MovieModalBtn } from '../styled.js';
 import Modal from '../Modal';
 import EditMovieContent from '../EditMovieContent';
 import DeleteMovieContent from '../DeleteMovieContent';
@@ -10,7 +10,6 @@ const MovieModalContent = () => {
   return (
     <>
       <MovieModal>
-        <MovieModalClose onClick={() => {setModalContent(null);}} />
         <Modal
           onClose={() => {setModalContent(null);}}
           show={(modalContent && modalContent.key === 'edit')}>

@@ -2,6 +2,8 @@ import React from 'react';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import styled from 'styled-components';
 import MovieModalContent from '../MovieModalContent';
+import useModalStatus from '../../hooks/modalHelper';
+import ModalForMovie from '../ModalForMovie';
 
 const MovieIcon = styled(MoreVertIcon)`
   && {
@@ -14,31 +16,20 @@ const MovieIcon = styled(MoreVertIcon)`
   }
 `;
 
-class MovieIconModal extends React.Component {
-  constructor() {
-    super();
-    this.handler = this.handler.bind(this);
-    this.state = {
-      show: false
-    };
-  }
-
-  handler(param) {
-    this.setState({
-      show: param
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        {
-          this.state.show ? <MovieModalContent action={this.handler}/> : null
-        }
-        <MovieIcon onClick={() => { this.setState({ show: !this.state.show }); }} />
+const MovieIconModal = () => {
+  const [modalContent, setModalContent] = useModalStatus();
+  return (
+    <>
+      <div className='movie-icon'>
+        <MovieIcon onClick={() => { setModalContent({ key: 'movie-modal', movie: 1 }); }} />
       </div>
-    );
-  }
-}
+      <ModalForMovie
+        onClose={() => {setModalContent(null);}}
+        show={(modalContent && modalContent.key === 'movie-modal')}>
+        <MovieModalContent />
+      </ModalForMovie>
+    </>
+  );
+};
 
 export default MovieIconModal;

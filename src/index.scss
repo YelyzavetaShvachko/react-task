@@ -52,6 +52,16 @@ body {
         width: 100%;
       }
     }
+
+    .movie-icon {
+      display: none;
+    }
+    
+    .movie-card-hovered {
+      .movie-icon {
+        display: block;
+      }
+    }
   }
 
   footer {

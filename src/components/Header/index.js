@@ -5,33 +5,28 @@ import AddMovie from '../AddMovie';
 import FindMovie from '../FindMovie';
 import Modal from '../Modal';
 import AddMovieContent from '../AddMovieContent';
+import useModalStatus from '../../hooks/modalHelper';
 
-class StyledBlock extends React.Component {
-  state = {
-    show: false // set true to see Add Movie modal
-  };
-  showModal = () => {
-    this.setState({
-      show: !this.state.show
-    });
-  };
-  render() {
-    return (
-      <>
-        <Background />
-        <header className='header container'>
-          <Logo />
-          <AddMovie
-            showModal={this.showModal}
-          />
-          <Modal onClose={this.showModal} show={this.state.show}>
-            <AddMovieContent />
-          </Modal>
-          <FindMovie />
-        </header>
-      </>
-    );
-  }
-}
+const Header = () => {
+  const [modalContent, setModalContent] = useModalStatus();
+  console.log('header');
+  return (
+    <>
+      <Background />
+      <header className='header container'>
+        <Logo />
+        <AddMovie
+          showModal={() => { setModalContent({ key: 'addMovie', movie: 1 });}}
+        />
+        <Modal
+          onClose={() => { setModalContent(null); }}
+          show={(modalContent && modalContent.key === 'addMovie')}>
+          <AddMovieContent />
+        </Modal>
+        <FindMovie />
+      </header>
+    </>
+  );
+};
 
-export default StyledBlock;
+export default Header;

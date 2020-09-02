@@ -290,7 +290,7 @@ export const CancelBtn = styled.button`
 
 // movie modal
 export const MovieIcon = styled.div`
-    display: block;
+    display: none;
     width: 40px;
     height: 40px;
     background: #232323;
@@ -314,10 +314,11 @@ padding-top: 30px;
 
 export const MovieModalClose = styled.div`
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 25px;
+    top: 20px;
     width: 20px;
     height: 20px;
+    z-index: 9;
     &:after, &:before {
         position: absolute;
         left: 15px;
