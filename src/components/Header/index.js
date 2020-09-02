@@ -3,16 +3,30 @@ import { Background } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 import AddMovie from '../AddMovie';
 import FindMovie from '../FindMovie';
+import Modal from '../Modal';
+import AddMovieContent from '../AddMovieContent';
+import useModalStatus from '../../hooks/modalHelper';
 
-const StyledBlock = () => (
-  <>
-    <Background />
-    <header className='header container'>
-      <Logo />
-      <AddMovie />
-      <FindMovie />
-    </header>
-  </>
-);
+const Header = () => {
+  const [modalContent, setModalContent] = useModalStatus();
+  console.log('header');
+  return (
+    <>
+      <Background />
+      <header className='header container'>
+        <Logo />
+        <AddMovie
+          showModal={() => { setModalContent({ key: 'addMovie', movie: 1 });}}
+        />
+        <Modal
+          onClose={() => { setModalContent(null); }}
+          show={(modalContent && modalContent.key === 'addMovie')}>
+          <AddMovieContent />
+        </Modal>
+        <FindMovie />
+      </header>
+    </>
+  );
+};
 
-export default StyledBlock;
+export default Header;
