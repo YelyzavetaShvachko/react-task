@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
 import MovieIcon from '../MovieIcon';
 import PropTypes from 'prop-types';
+import useMovieData from '../../hooks/movieDetailsHelper';
 
 export default function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
+  const [movieData, setMovieData] = useMovieData();
   return (
     <MovieCard
       className={hovered ? 'movie-card-hovered' : ''}
       onMouseEnter={() => {setHovered(true);}}
       onMouseLeave={() => {setHovered(false);}}
+      onClick={() => {setMovieData({title: props.title, genre: props.genre, year: props.year, duration: '', photo: props.photo, id: '', raiting: '', description: ''}); console.log('movieData', movieData);}}
     >
       <Image src={props.photo} />
       <MovieIcon />

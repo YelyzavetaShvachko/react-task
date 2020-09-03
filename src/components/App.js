@@ -5,6 +5,7 @@ import Footer from './Footer';
 import ErrorFallback from './ErrorFallback';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ModalProvider } from '../state/context';
+import MovieDetails from './MovieDetails';
 
 function App() {
   // Use Bomb to check ErrorBoundary
@@ -19,6 +20,7 @@ function App() {
         <ErrorBoundary
           FallbackComponent={ErrorFallback}
         >
+          <MovieDetails />
           {/* <Bomb />   */}
           <MoviesList />
         </ErrorBoundary>

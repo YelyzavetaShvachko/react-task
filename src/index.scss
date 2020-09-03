@@ -17,7 +17,7 @@ body {
   background-color: #555555;
 
   .svg-icon-netflix-logo {
-    fill: #e50914;
+    fill: #f65261;
     height: 36px;
     width: 134px;
   }
@@ -25,6 +25,7 @@ body {
   .container {
     width: 90vw;
     margin: 0 auto;
+    position: relative;
   }
 
   .header {
@@ -46,7 +47,7 @@ body {
         content: '';
         display: block;
         position: absolute;
-        background: #e50914;
+        background: #f65261;
         bottom: -3px;
         left: 0;
         height: 4px;
