@@ -1,16 +1,8 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { MovieContext } from './MovieContext';
 
 function useMovieData() {
-  const  [movieData, setMovieData] = useState({
-    title: 'Movie title',
-    genre: 'Movie genre',
-    year: 'release year',
-    duration: 'film duration',
-    photo: 'movie picture',
-    id: 'movie id',
-    raiting: 'film raiting',
-    description: 'movie description'
-  }); 
+  const [movieData, setMovieData] = useContext(MovieContext);
   return [movieData,setMovieData];
 }
 

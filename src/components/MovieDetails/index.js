@@ -1,9 +1,21 @@
 import React from 'react';
-import { MovieDetailsBackground, MovieDetailsWrapper, MovieDetailsContent, MovieDetailsTitle, MovieDetailsTitleWrap, MovieDetailsRaiting, MovieDurationAndYear, MovieDetailsBlock, Image } from '../styled.js';
+import {
+  MovieDetailsBackground,
+  MovieDetailsWrapper,
+  MovieDetailsContent,
+  MovieDetailsTitle,
+  MovieDetailsTitleWrap,
+  MovieDetailsRaiting,
+  MovieDurationAndYear,
+  MovieDetailsBlock
+} from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 import SearchIcon from '../SearchIcon';
+import useMovieData from '../../hooks/movieDetailsHelper';
 
 const MovieDetails = () => {
+  const [movieData] = useMovieData();
+  console.log('movieData', movieData);
   return (
     <>
       <MovieDetailsBackground />
