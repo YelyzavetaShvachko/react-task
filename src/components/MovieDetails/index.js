@@ -7,17 +7,22 @@ import {
   MovieDetailsTitleWrap,
   MovieDetailsRaiting,
   MovieDurationAndYear,
-  MovieDetailsBlock
+  MovieDetailsBlock,
+  MovieDetailsImg
 } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 import SearchIcon from '../SearchIcon';
-import useMovieData from '../../hooks/movieDetailsHelper';
+import useMovieData from '../../hooks/movieDataHelper';
+import useHeaderContent from '../../hooks/headerContentHelper';
 
 const MovieDetails = () => {
   const [movieData] = useMovieData();
   console.log('movieData', movieData);
+  const [activeContent] = useHeaderContent();
+  console.log('activeContent in details', activeContent);
+
   return (
-    <>
+    <div className={activeContent ? 'show' : 'hidden'} >
       <MovieDetailsBackground />
       <MovieDetailsBlock>
         <div className='container'>
@@ -25,28 +30,24 @@ const MovieDetails = () => {
           <SearchIcon />
           <MovieDetailsWrapper>
             <div>
-              <img src='img/pulp-fiction.jpg' />
+              <MovieDetailsImg src={movieData.photo} />
             </div>
             <MovieDetailsContent>
               <MovieDetailsTitleWrap>
-                <MovieDetailsTitle>Pulp Fiction</MovieDetailsTitle>
-                <MovieDetailsRaiting>4.3</MovieDetailsRaiting>
+                <MovieDetailsTitle>{movieData.title}</MovieDetailsTitle>
+                <MovieDetailsRaiting>{movieData.raiting}</MovieDetailsRaiting>
               </MovieDetailsTitleWrap>
-              <p>Oscar winning Movie</p>
+              <p>{movieData.genre}</p>
               <MovieDurationAndYear>
-                <span>1994</span>
-                <span>134 min</span>
+                <span>{movieData.year}</span>
+                <span>{movieData.duration}</span>
               </MovieDurationAndYear>
-              <p>Pulp Fiction is a 1994 American neo-noir black comedy crime film written and directed by
-              Quentin Tarantino, who conceived it with Roger Avary.[4] Starring John Travolta, Samuel L. Jackson,
-              Bruce Willis, Tim Roth, Ving Rhames, and Uma Thurman, it tells several stories of criminal
-              Los Angeles. The title refers to the pulp magazines and hardboiled crime novels popular during
-             the mid-20th century, known for their graphic violence and punchy dialogue.</p>
+              <p>{movieData.description}</p>
             </MovieDetailsContent>
           </MovieDetailsWrapper>
         </div>
       </MovieDetailsBlock>
-    </>
+    </div>
   );
 };
 export default MovieDetails;

@@ -378,6 +378,7 @@ export const MovieDetailsContent = styled.div`
     padding: 20px 0 0 40px;
     color: #ffffff;
     font-size: 16px;
+    height: 340px;
 `;
 
 export const MovieDetailsTitle = styled.h3`
@@ -406,4 +407,8 @@ export const MovieDurationAndYear = styled.div`
     justify-content: space-between;
     font-size: 26px;
     margin: 15px 0;
+`;
+
+export const MovieDetailsImg = styled.img`
+    height: 340px;
 `;
