@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
 import MovieIcon from '../MovieIcon';
 import PropTypes from 'prop-types';
 import useMovieData from '../../hooks/movieDataHelper';
 import useHeaderContent from '../../hooks/headerContentHelper';
+import { HeaderContext } from '../../hooks/HeaderContext';
 
 export default function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
-  const [,setMovieData] = useMovieData();
-  const [activeContent,setActiveContent] = useHeaderContent();
+  const [, setMovieData] = useMovieData();
+  const [activeContent, setActiveContent] = useHeaderContent();
+  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
+
   return (
     <MovieCard
       className={hovered ? 'movie-card-hovered' : ''}
-      onMouseEnter={() => {setHovered(true);}}
-      onMouseLeave={() => {setHovered(false);}}
+      onMouseEnter={() => { setHovered(true); }}
+      onMouseLeave={() => { setHovered(false); }}
       onClick={() => {
         setMovieData({
           title: props.title,
@@ -26,7 +29,8 @@ export default function MovieCardWrapper(props) {
           description: props.description
         });
         setActiveContent(true);
-        console.log('activeContent on click', activeContent);
+        setDetailsVisibility(true);
+        console.log('detailsVisibility on movie click', detailsVisibility);
       }}
     >
       <Image src={props.photo} />

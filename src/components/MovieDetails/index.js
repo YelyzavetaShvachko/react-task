@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   MovieDetailsBackground,
   MovieDetailsWrapper,
@@ -11,23 +11,25 @@ import {
   MovieDetailsImg
 } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
-import SearchIcon from '../SearchIcon';
+import MovieDetailsSearch from '../MovieDetailsSearch';
 import useMovieData from '../../hooks/movieDataHelper';
 import useHeaderContent from '../../hooks/headerContentHelper';
+import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetails = () => {
   const [movieData] = useMovieData();
   console.log('movieData', movieData);
   const [activeContent] = useHeaderContent();
-  console.log('activeContent in details', activeContent);
 
+  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
+  console.log('detailsVisibility in details', detailsVisibility);
   return (
-    <div className={activeContent ? 'show' : 'hidden'} >
+    <div className={detailsVisibility ? 'show' : 'hidden'} >
       <MovieDetailsBackground />
       <MovieDetailsBlock>
         <div className='container'>
           <Logo />
-          <SearchIcon />
+          <MovieDetailsSearch />
           <MovieDetailsWrapper>
             <div>
               <MovieDetailsImg src={movieData.photo} />

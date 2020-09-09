@@ -7,6 +7,7 @@ const SearchIconBlock = styled(SearchIcon)`
     color: #f65261;
     position: absolute;
     right: 0;
+    top: 0;
   }
 `;
 
