@@ -10,7 +10,7 @@ import { HeaderContext } from '../../hooks/HeaderContext';
 
 const Header = () => {
   const [modalContent, setModalContent] = useModalStatus();
-  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
+  const { detailsVisibility } = useContext(HeaderContext);
 
   return (
     <div className={detailsVisibility ? 'hidden' : 'show'}>

@@ -8,7 +8,6 @@ const MovieDetailsSearch = () => {
   return (
     <div onClick={() => {
       setDetailsVisibility(false);
-      console.log('detailsVisibility on search click', detailsVisibility);
     }}>
       <SearchIcon />
     </div>

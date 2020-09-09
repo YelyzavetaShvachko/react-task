@@ -10,7 +10,6 @@ const actions = {
 function reducer(state, action) {
   switch (action.type) {
   case actions.SET_OPEN:
-    console.log('action ---', action);
 
     return {
       ...state,

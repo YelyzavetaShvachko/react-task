@@ -13,16 +13,12 @@ import {
 import Logo from '../../assets/img/logo.svg';
 import MovieDetailsSearch from '../MovieDetailsSearch';
 import useMovieData from '../../hooks/movieDataHelper';
-import useHeaderContent from '../../hooks/headerContentHelper';
 import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetails = () => {
   const [movieData] = useMovieData();
-  console.log('movieData', movieData);
-  const [activeContent] = useHeaderContent();
+  const { detailsVisibility } = useContext(HeaderContext);
 
-  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
-  console.log('detailsVisibility in details', detailsVisibility);
   return (
     <div className={detailsVisibility ? 'show' : 'hidden'} >
       <MovieDetailsBackground />
