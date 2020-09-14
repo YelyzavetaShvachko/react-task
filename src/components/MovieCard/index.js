@@ -7,7 +7,7 @@ import { HeaderContext } from '../../hooks/HeaderContext';
 
 function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
-  const [movieData, setMovieData] = useMovieData();
+  const [, setMovieData] = useMovieData();
   const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
 
   useEffect(() => {
@@ -25,11 +25,11 @@ function MovieCardWrapper(props) {
       raiting: props.raiting,
       description: props.description
     });
-  }, [movieData]);
+  }, [props]);
 
   const handleDetailsVisibility = useCallback(() => {
     setDetailsVisibility(true);
-  }, [detailsVisibility]);
+  }, []);
 
   const handleHover = useCallback(() => {
     setHovered(true);
@@ -42,8 +42,8 @@ function MovieCardWrapper(props) {
   return (
     <MovieCard
       className={hovered ? 'movie-card-hovered' : ''}
-      onMouseEnter={() => { handleHover(); }}
-      onMouseLeave={() => { handleUnHover(); }}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleUnHover}
       onClick={() => {
         handleMovieData();
         handleDetailsVisibility();
