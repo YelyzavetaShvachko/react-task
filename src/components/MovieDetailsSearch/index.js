@@ -3,7 +3,7 @@ import SearchIcon from '../SearchIcon';
 import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetailsSearch = () => {
-  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
+  const { setDetailsVisibility } = useContext(HeaderContext);
 
   return (
     <div onClick={() => {

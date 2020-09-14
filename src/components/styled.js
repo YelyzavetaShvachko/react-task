@@ -97,11 +97,11 @@ export const Year = styled.span`
     padding: 0 10px;
     border-radius: 5px;
     position: absolute;
-    top: 35px;
+    top: 15px;
     right: 0;
 `;
 
-export const DescriptionWrapper = styled.span`
+export const DescriptionWrapper = styled.div`
     position: relative;
     font-size: 16px;
 `;

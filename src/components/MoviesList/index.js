@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MoviesSection, Navigation, MoviesWrapper } from '../styled.js';
 import MovieCard from '../MovieCard';
 import Categories from '../Categories';
@@ -39,7 +39,7 @@ let movies = [
     genre: 'Oscar winning movie',
     year: '2004',
     photo: KillBillImg,
-    description:'Kill Bill: Volume 2 is a 2004 American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who continues her campaign of revenge against the Deadly Viper Assassination Squad (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader Bill (David Carradine), who tried to kill her and her unborn child.',
+    description: 'Kill Bill: Volume 2 is a 2004 American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who continues her campaign of revenge against the Deadly Viper Assassination Squad (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader Bill (David Carradine), who tried to kill her and her unborn child.',
     duration: '136 min',
     raiting: '4.8',
     id: '3'
@@ -49,7 +49,7 @@ let movies = [
     genre: 'Action & Adventure',
     year: '2018',
     photo: AvengersImg,
-    description:'"Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos.',
+    description: '"Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos.',
     duration: '149 min',
     raiting: '6.8',
     id: '4'
@@ -69,35 +69,43 @@ let movies = [
     genre: 'Oscar winning movie',
     year: '1992',
     photo: ReservoirDogsImg,
-    description:'Six criminals, who are strangers to each other, are hired by a crime boss, Joe Cabot, to carry out a diamond robbery. Right at the outset, they are given false names with the intention that they wont get too close and will concentrate on the job instead. They are completely sure that the robbery is going to be a success.',
+    description: 'Six criminals, who are strangers to each other, are hired by a crime boss, Joe Cabot, to carry out a diamond robbery. Right at the outset, they are given false names with the intention that they wont get too close and will concentrate on the job instead. They are completely sure that the robbery is going to be a success.',
     duration: '99 min',
     raiting: '5.7',
     id: '6'
   }
 ];
 
-const MoviesList = () => (
-  <MoviesSection className='content'>
-    <Navigation className='container'>
-      <Categories />
-      <Sorting />
-    </Navigation>
-    <SearchResults />
-    <MoviesWrapper className='container'>
-      {movies.map((movie) =>
-        <MovieCard
-          title={movie.title}
-          genre={movie.genre}
-          year={movie.year}
-          photo={movie.photo}
-          description={movie.description}
-          duration={movie.duration}
-          raiting={movie.raiting}
-          key={movie.id}
-        />
-      )}
-    </MoviesWrapper>
-  </MoviesSection>
-);
+const MoviesList = () => {
+
+  // call this function only if movies changes
+  useEffect(() => {
+    console.log('render movie list deps on movies');
+  }, [movies]);
+
+  return (
+    <MoviesSection className='content'>
+      <Navigation className='container'>
+        <Categories />
+        <Sorting />
+      </Navigation>
+      <SearchResults />
+      <MoviesWrapper className='container'>
+        {movies.map((movie) =>
+          <MovieCard
+            title={movie.title}
+            genre={movie.genre}
+            year={movie.year}
+            photo={movie.photo}
+            description={movie.description}
+            duration={movie.duration}
+            raiting={movie.raiting}
+            key={movie.id}
+          />
+        )}
+      </MoviesWrapper>
+    </MoviesSection>
+  );
+};
 
 export default MoviesList;
