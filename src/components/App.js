@@ -9,6 +9,8 @@ import MovieDetails from './MovieDetails';
 import { MovieContextProvider } from '../hooks/MovieContext';
 import { HeaderContext } from '../hooks/HeaderContext';
 import { MovieContext } from '../hooks/MovieContext';
+import { Provider } from 'react-redux';
+import store from '../store/store';
 
 function App() {
   // Use Bomb to check ErrorBoundary
@@ -19,22 +21,24 @@ function App() {
   const [detailsVisibility, setDetailsVisibility] = useState(false);
 
   return (
-    <MovieContextProvider movieData={movieData}>
-      <ModalProvider>
-        <HeaderContext.Provider value={{ detailsVisibility, setDetailsVisibility }}>
-          <Header />
-          <ErrorBoundary
-            FallbackComponent={ErrorFallback}
-          >
-            <MovieDetails />
-            {/* <Bomb />   */}
-            <MoviesList />
-          </ErrorBoundary>
-          <Footer />
-          {/* <ModalsList /> */}
-        </HeaderContext.Provider>
-      </ModalProvider>
-    </MovieContextProvider>
+    <Provider store={store}>
+      <MovieContextProvider movieData={movieData}>
+        <ModalProvider>
+          <HeaderContext.Provider value={{ detailsVisibility, setDetailsVisibility }}>
+            <Header />
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+            >
+              <MovieDetails />
+              {/* <Bomb />   */}
+              <MoviesList />
+            </ErrorBoundary>
+            <Footer />
+            {/* <ModalsList /> */}
+          </HeaderContext.Provider>
+        </ModalProvider>
+      </MovieContextProvider>
+    </Provider>
   );
 }
 
