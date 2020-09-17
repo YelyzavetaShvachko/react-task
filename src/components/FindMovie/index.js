@@ -1,7 +1,7 @@
 import React from 'react';
 import { Title, SearchForm, SearchInput, SearchBtn } from '../styled.js';
 
-const StyledBlock = () => (
+const SearchMovieSection = () => (
   <div className='find-movie-wrapper'>
     <Title>FIND YOUR MOVIE</Title>
     <SearchForm>
@@ -11,4 +11,4 @@ const StyledBlock = () => (
   </div>
 );
 
-export default StyledBlock;
+export default SearchMovieSection;

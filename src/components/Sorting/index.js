@@ -1,7 +1,7 @@
 import React from 'react';
 import { SortingWrapper, SortingTitle, SortingValue } from '../styled.js';
 
-const StyledBlock = () => (
+const Sorting = () => (
   <SortingWrapper>
     <SortingTitle>SORT BY</SortingTitle>
     <SortingValue>
@@ -14,4 +14,4 @@ const StyledBlock = () => (
   </SortingWrapper>
 );
 
-export default StyledBlock;
+export default Sorting;

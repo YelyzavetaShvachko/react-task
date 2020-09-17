@@ -6,7 +6,7 @@ export const AddMovie = styled.button`
     right: 0;
     width: 182px;
     padding: 10px 0;
-    color: #e50914;
+    color: #f65261;
     background-color: rgba(76, 74, 74, 0.7);
     font-size: 18px;
 `;
@@ -20,6 +20,7 @@ export const Category = styled.div`
     color: #ffffff;
     font-size: 16px;
 `;
+
 export const Title = styled.h1`
     color: #ffffff;
     margin-bottom: 30px;
@@ -43,7 +44,7 @@ export const SearchBtn = styled.button`
     width: 25%;
     padding: 15px 0;
     font-size: 18px;
-    background-color: #e50914;
+    background-color: #f65261;
     color: #ffffff;
 `;
 
@@ -96,11 +97,11 @@ export const Year = styled.span`
     padding: 0 10px;
     border-radius: 5px;
     position: absolute;
-    top: 35px;
+    top: 15px;
     right: 0;
 `;
 
-export const DescriptionWrapper = styled.span`
+export const DescriptionWrapper = styled.div`
     position: relative;
     font-size: 16px;
 `;
@@ -156,7 +157,7 @@ export const SortingWrapper = styled.div`
     align-items: center;
     &:after {
         content: '\A';
-        color: red;
+        color: #f65261;
         right: 0;
         position: absolute;
         content: '';
@@ -164,7 +165,7 @@ export const SortingWrapper = styled.div`
         height: 0px;
         border-style: solid;
         border-width: 4px 6px 4px 0;
-        border-color: transparent red transparent transparent;  
+        border-color: transparent #f65261 transparent transparent;  
         display: inline-block;
         vertical-align: middle;
         transform: rotate(270deg);
@@ -342,4 +343,72 @@ export const MovieModalBtn = styled.div`
     &:hover {
         background: #f65261;
     }
+`;
+
+// movie details
+export const MovieDetailsBlock = styled.div`
+    padding: 30px 0;
+`;
+
+export const MovieDetailsBackground = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 510px;
+    background-image: url(${img});
+    z-index: -1;
+    background-size: cover;
+    &:before {
+    content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000000;
+        opacity: 0.85;
+  }
+`;
+
+export const MovieDetailsWrapper = styled.div`
+    padding: 40px 0;
+    display: flex;
+`;
+
+export const MovieDetailsContent = styled.div`
+    padding: 20px 0 0 40px;
+    color: #ffffff;
+    font-size: 16px;
+    height: 340px;
+`;
+
+export const MovieDetailsTitle = styled.h3`
+    font-size: 48px;
+`;
+
+export const MovieDetailsTitleWrap = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+`;
+
+export const MovieDetailsRaiting = styled.div`
+    font-size: 28px;
+    color: #018401;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 30px;
+`;
+
+export const MovieDurationAndYear = styled.div`
+    color: #f65261;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    margin: 15px 0;
+`;
+
+export const MovieDetailsImg = styled.img`
+    height: 340px;
 `;
