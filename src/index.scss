@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 button, input {
@@ -15,8 +16,16 @@ body {
   font-family: 'Baloo 2', cursive;
   background-color: #555555;
 
+  .hidden {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
   .svg-icon-netflix-logo {
-    fill: #e50914;
+    fill: #f65261;
     height: 36px;
     width: 134px;
   }
@@ -24,6 +33,7 @@ body {
   .container {
     width: 90vw;
     margin: 0 auto;
+    position: relative;
   }
 
   .header {
@@ -45,7 +55,7 @@ body {
         content: '';
         display: block;
         position: absolute;
-        background: #e50914;
+        background: #f65261;
         bottom: -3px;
         left: 0;
         height: 4px;
