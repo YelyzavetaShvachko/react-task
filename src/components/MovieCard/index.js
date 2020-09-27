@@ -8,7 +8,7 @@ import { HeaderContext } from '../../hooks/HeaderContext';
 function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
   const [, setMovieData] = useMovieData();
-  const { detailsVisibility, setDetailsVisibility } = useContext(HeaderContext);
+  const { setDetailsVisibility } = useContext(HeaderContext);
 
   useEffect(() => {
     console.log('render movie card');
