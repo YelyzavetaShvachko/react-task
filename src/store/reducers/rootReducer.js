@@ -1,16 +1,39 @@
 
-import { ADD_MOVIE, EDIT_MOVIE, DELETE_MOVIE } from '../actions/actionTypes';
+import {
+  ADD_MOVIE,
+  EDIT_MOVIE,
+  DELETE_MOVIE,
+  SUCCESS_FETCH_MOVIE,
+  REQUEST_FETCH_MOVIE,
+  FAIL_FETCH_MOVIE
+} from '../actions/actionTypes';
 
 const initialState = {
-  app: [],
+  movies: [],
+  loading: false,
+  error: false
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-  case ADD_MOVIE:
+  case SUCCESS_FETCH_MOVIE:
     return {
       ...state,
-      app: [],
+      loading: false,
+      error: false,
+      movies: action.payload,
+    };
+
+  case REQUEST_FETCH_MOVIE:
+    return {
+      ...state,
+      loading: true,
+    };
+
+  case FAIL_FETCH_MOVIE:
+    return {
+      ...state,
+      error: true
     };
 
   default:
