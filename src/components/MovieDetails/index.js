@@ -12,11 +12,10 @@ import {
 } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 import MovieDetailsSearch from '../MovieDetailsSearch';
-import useMovieData from '../../hooks/movieDataHelper';
 import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetails = () => {
-  const [movieData] = useMovieData();
+  const movieData = {};
   const { detailsVisibility } = useContext(HeaderContext);
 
   return (

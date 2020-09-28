@@ -1,16 +1,17 @@
 import {
   SUCCESS_FETCH_MOVIE,
   REQUEST_FETCH_MOVIE,
-  FAIL_FETCH_MOVIE
+  FAIL_FETCH_MOVIE, FILTERING_BY_GENRE
 } from '../actions/actionTypes';
 
 const initialState = {
   movies: [],
   loading: false,
-  error: false
+  error: false,
+  activeGenre: 'ALL',
 };
-  
-export const fetchMovieReducer = (state = initialState, action) => {
+
+const first = (state = initialState, action) => {
   switch (action.type) {
   case SUCCESS_FETCH_MOVIE:
     return {
@@ -32,7 +33,14 @@ export const fetchMovieReducer = (state = initialState, action) => {
       error: true
     };
 
+  case FILTERING_BY_GENRE:
+    return {
+      ...state
+    };
+
   default:
     return state;
   }
 };
+
+export default first;
