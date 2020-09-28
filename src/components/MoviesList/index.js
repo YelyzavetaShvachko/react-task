@@ -78,8 +78,8 @@ const MoviesList = () => {
   useEffect(() => {
     dispatch(requestMovies());
     axios
-      .get('http://localhost:4000/movies')
-      .then(movies => dispatch(successMovies(movies.data.data)))
+      .get('http://localhost:3001/movies')
+      .then(movies => dispatch(successMovies(movies.data)))
       .catch(() => failMovies());
   }, []);
 
