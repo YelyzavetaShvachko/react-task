@@ -5,7 +5,8 @@ import {
   SUCCESS_FETCH_MOVIE,
   REQUEST_FETCH_MOVIE,
   FAIL_FETCH_MOVIE,
-  FILTERING_BY_GENRE
+  FILTERING_BY_GENRE,
+  SET_ACTIVE_MOVIE
 } from './actionTypes';
 
 const addMovie = (movie) => ({ type: ADD_MOVIE, payload: movie });
@@ -15,6 +16,7 @@ const requestMovies = (payload) => ({type: REQUEST_FETCH_MOVIE, payload});
 const successMovies = (payload) => ({type: SUCCESS_FETCH_MOVIE, payload}); 
 const failMovies = () => ({type: FAIL_FETCH_MOVIE}); 
 const genreFiltering = (payload) => ({type: FILTERING_BY_GENRE, payload});
+const setActiveMovie = (payload) => ({type: SET_ACTIVE_MOVIE, payload});
 
 export {
   addMovie,
@@ -23,5 +25,6 @@ export {
   requestMovies,
   successMovies,
   failMovies,
-  genreFiltering
+  genreFiltering,
+  setActiveMovie
 };

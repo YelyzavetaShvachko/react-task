@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { requestMovies, successMovies, failMovies } from '../../store/actions/actionCreators';
-// import { moviesList } from '../../store/selectors/selectors'
+import { moviesList } from '../../store/selectors'
 import axios from 'axios';
 
 import { MoviesSection, Navigation, MoviesWrapper } from '../styled.js';
@@ -80,16 +80,17 @@ const MoviesList = () => {
     axios
       .get('http://localhost:3001/movies')
       .then(movies => dispatch(successMovies(movies.data)))
-      .catch(() => failMovies());
+      .catch(() => dispatch(failMovies()));
   }, []);
 
   // const mapStateToProps = (state) => ({
   //   movies: moviesList(state)
   // });
 
-  //селекторы отдельно в стор выделить в файлик
-  const movies = useSelector(state => state.app.movies);
+  const movies = useSelector(moviesList);
+
   console.log('movies', movies);
+
   return (
     <MoviesSection className='content'>
       <Navigation className='container'>
@@ -101,6 +102,7 @@ const MoviesList = () => {
         {movies.map((movie) =>
           <MovieCard
             title={movie.title}
+            id={movie.id}
             genre={movie.tagline}
             genresList={movie.genres.join(', ')}
             year={movie.release_date}

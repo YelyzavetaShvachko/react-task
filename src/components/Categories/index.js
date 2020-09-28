@@ -48,7 +48,7 @@ const categoriesList = [
 const CategoriesSection = () => {
   const dispatch = useDispatch();
   dispatch(genreFiltering());
-  const activeGenre = useSelector(state => state.app.activeGenre);
+  const activeGenre = useSelector(state => state.activeGenre);
 
   const itemHandleClick = useCallback(() => {
 

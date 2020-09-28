@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import { fetchMovieReducer } from './fetchMovieReducer';
-import first from './testReducer';
+import { activeMovieReducer } from './activeMovieReducer';
 
 export const rootReducer = combineReducers({
-  fetchMovieReducer,
-  first
+  moviesData: fetchMovieReducer,
+  activeMovie: activeMovieReducer
 });
-
-
 
 export default rootReducer;

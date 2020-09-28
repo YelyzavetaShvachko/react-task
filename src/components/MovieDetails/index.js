@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import {
   MovieDetailsBackground,
   MovieDetailsWrapper,
@@ -15,8 +16,11 @@ import MovieDetailsSearch from '../MovieDetailsSearch';
 import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetails = () => {
-  const movieData = {};
   const { detailsVisibility } = useContext(HeaderContext);
+  const activeMovieId = useSelector(state => state.activeMovie.id);
+  const movieData = useSelector(
+    state => state.moviesData.movies.find(movie => movie.id === activeMovieId) || {}
+  );
 
   return (
     <div className={detailsVisibility ? 'show' : 'hidden'} >
@@ -27,7 +31,7 @@ const MovieDetails = () => {
           <MovieDetailsSearch />
           <MovieDetailsWrapper>
             <div>
-              <MovieDetailsImg src={movieData.photo} />
+              <MovieDetailsImg src={movieData.poster_path} />
             </div>
             <MovieDetailsContent>
               <MovieDetailsTitleWrap>
