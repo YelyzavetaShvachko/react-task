@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { requestMovies, successMovies, failMovies } from '../../store/actions/actionCreators';
 // import { moviesList } from '../../store/selectors/selectors'
+import axios from 'axios';
 
 import { MoviesSection, Navigation, MoviesWrapper } from '../styled.js';
 import MovieCard from '../MovieCard';
@@ -76,9 +77,9 @@ const MoviesList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(requestMovies());
-    fetch('http://localhost:4000/movies')
-      .then(res => res.json())
-      .then(movies => dispatch(successMovies(movies.data)))
+    axios
+      .get('http://localhost:4000/movies')
+      .then(movies => dispatch(successMovies(movies.data.data)))
       .catch(() => failMovies());
   }, []);
 
