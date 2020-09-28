@@ -2,12 +2,11 @@ import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
 import MovieIcon from '../MovieIcon';
 import PropTypes from 'prop-types';
-import useMovieData from '../../hooks/movieDataHelper';
 import { HeaderContext } from '../../hooks/HeaderContext';
 
 function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
-  const [, setMovieData] = useMovieData();
+  const setMovieData = () => {};
   const { setDetailsVisibility } = useContext(HeaderContext);
 
   useEffect(() => {
