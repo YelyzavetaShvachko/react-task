@@ -2,14 +2,23 @@
 import {
   SUCCESS_FETCH_MOVIE,
   REQUEST_FETCH_MOVIE,
-  FAIL_FETCH_MOVIE
+  FAIL_FETCH_MOVIE,
+  FILTERING_BY_GENRE
 } from '../actions/actionTypes';
 
 const initialState = {
   movies: [],
   loading: false,
-  error: false
+  error: false,
+  activeGenre: 'ALL',
 };
+
+// import { combineReducers } from 'redux';
+// import { fetchMovieReducer } from './fetchMovieReducer';
+
+// export const rootReducer = combineReducers({
+//   fetchMovieReducer
+// });
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,6 +40,11 @@ const rootReducer = (state = initialState, action) => {
     return {
       ...state,
       error: true
+    };
+
+  case FILTERING_BY_GENRE:
+    return {
+      ...state
     };
 
   default:

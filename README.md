@@ -13,6 +13,7 @@ The list of available commands can be cound in the scripts section of package.js
 ## API
 Swagger Api - https://github.com/VarvaraZadnepriak/MoviesAPI.ReactJS
 steps:
+in cd src/api
 npm install
 npm start 
 api url - http://localhost:4000/api-docs

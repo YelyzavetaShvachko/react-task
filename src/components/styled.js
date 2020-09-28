@@ -379,16 +379,19 @@ export const MovieDetailsContent = styled.div`
     color: #ffffff;
     font-size: 16px;
     height: 340px;
+    overflow: scroll;
 `;
 
 export const MovieDetailsTitle = styled.h3`
     font-size: 48px;
+    line-height: 1;
 `;
 
 export const MovieDetailsTitleWrap = styled.div`
     display: flex;
     align-items: center;
     font-size: 48px;
+    margin-bottom: 10px;
 `;
 
 export const MovieDetailsRaiting = styled.div`
@@ -396,7 +399,7 @@ export const MovieDetailsRaiting = styled.div`
     color: #018401;
     border: 1px solid #ffffff;
     border-radius: 50%;
-    padding: 2px 6px;
+    padding: 2px 10px;
     margin-left: 30px;
 `;
 

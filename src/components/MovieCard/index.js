@@ -53,8 +53,8 @@ function MovieCardWrapper(props) {
       <MovieIcon />
       <DescriptionWrapper>
         <h3>{props.title}</h3>
-        <Genre>{props.genre}</Genre>
-        <Year>{props.year}</Year>
+        <Genre>{props.genresList}</Genre>
+        <Year>{props.year && props.year.split('-')[0]}</Year>
       </DescriptionWrapper>
     </MovieCard>
   );

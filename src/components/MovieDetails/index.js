@@ -37,7 +37,7 @@ const MovieDetails = () => {
               </MovieDetailsTitleWrap>
               <p>{movieData.genre}</p>
               <MovieDurationAndYear>
-                <span>{movieData.year}</span>
+                <span>{movieData.year && movieData.year.split('-')[0]}</span>
                 <span>{movieData.duration}</span>
               </MovieDurationAndYear>
               <p>{movieData.description}</p>

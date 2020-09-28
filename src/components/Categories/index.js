@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { genreFiltering } from '../../store/actions/actionCreators';
+
 import Category from '../Category';
 import { CategoriesWrapper } from '../styled.js';
 
@@ -30,16 +33,56 @@ const categories = [
   }
 ];
 
-const CategoriesSection = () => (
-  <CategoriesWrapper>
-    {categories.map((category) =>
-      <Category
-        title={category.title}
-        styleName={category.styleName}
-        key={category.id}
-      />
-    )}
-  </CategoriesWrapper>
-);
+const categoriesList = [
+  'ALL',
+  'ADVENTURE',
+  'FAMILY',
+  'DOCUMENTARY',
+  'COMEDY',
+  'HORROR',
+  'CRIME',
+  'FANTASY',
+  'SCIENCE FICTION'
+];
 
-export default CategoriesSection;
+const CategoriesSection = () => {
+  const dispatch = useDispatch();
+  dispatch(genreFiltering());
+  const activeGenre = useSelector(state => state.app.activeGenre);
+
+  const itemHandleClick = useCallback(() => {
+
+    if (event.target.innerText === 'ALL') {
+      dispatch(genreFiltering({ activeGenre: undefined }));
+    } else {
+      dispatch(genreFiltering({ activeGenre: event.target.innerText }));
+    }
+    console.log('activeGenre', activeGenre);
+
+  },[event]); 
+    // if ((event.target).innerText !== activeEl) {
+    //     setActiveEl(event.target.innerText);
+    // }
+
+  return (
+    <CategoriesWrapper>
+      {categories.map((category) =>
+        <Category
+          title={category.title}
+          styleName={category.styleName}
+          key={category.id}
+          onClick={itemHandleClick}
+        />
+      )}
+    </CategoriesWrapper>
+  );
+};
+
+function mapStateToProps(state) {
+  return {
+    activeGenre: state.activeGenre
+  };
+}
+
+// export default CategoriesSection;
+export default connect(mapStateToProps)(CategoriesSection); 

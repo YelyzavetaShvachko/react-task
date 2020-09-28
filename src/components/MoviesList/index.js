@@ -1,20 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { requestMovies, successMovies, failMovies } from '../../store/actions/actionCreators';
+// import { moviesList } from '../../store/selectors/selectors'
 
 import { MoviesSection, Navigation, MoviesWrapper } from '../styled.js';
 import MovieCard from '../MovieCard';
 import Categories from '../Categories';
 import SearchResults from '../SearchResults';
 import Sorting from '../Sorting';
-
-// images
-// import AvengersImg from '../../assets/img/avengers.jpg';
-// import BohemianRhapsodyImg from '../../assets/img/bohemian-rhapsody.jpg';
-// import InceptionImg from '../../assets/img/inception.jpg';
-// import KillBillImg from '../../assets/img/kill-bill.jpg';
-// import PulpFictionImg from '../../assets/img/pulp-fiction.jpg';
-// import ReservoirDogsImg from '../../assets/img/reservoir-dogs.jpg';
 
 // let movies = [
 //   {
@@ -89,6 +82,10 @@ const MoviesList = () => {
       .catch(() => failMovies());
   }, []);
 
+  // const mapStateToProps = (state) => ({
+  //   movies: moviesList(state)
+  // });
+
   //селекторы отдельно в стор выделить в файлик
   const movies = useSelector(state => state.app.movies);
   console.log('movies', movies);
@@ -103,7 +100,8 @@ const MoviesList = () => {
         {movies.map((movie) =>
           <MovieCard
             title={movie.title}
-            genre={movie.genres}
+            genre={movie.tagline}
+            genresList={movie.genres.join(', ')}
             year={movie.release_date}
             photo={movie.poster_path}
             description={movie.overview}
