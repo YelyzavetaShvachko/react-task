@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { genreFiltering } from '../../store/actions/actionCreators';
+import { genre } from '../../store/selectors';
 
 import Category from '../Category';
 import { CategoriesWrapper } from '../styled.js';
@@ -48,7 +49,8 @@ const categoriesList = [
 const CategoriesSection = () => {
   const dispatch = useDispatch();
   dispatch(genreFiltering());
-  const activeGenre = useSelector(state => state.activeGenre);
+  // const activeGenre = useSelector(state => state.activeGenre);
+  const activeGenre = useSelector(genre);
 
   const itemHandleClick = useCallback(() => {
 

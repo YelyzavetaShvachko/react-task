@@ -4,7 +4,7 @@
             "id": 399790,
             "title": "Churchill",
             "tagline": "The untold story of D-Day.",
-            "vote_average": 6,
+            "vote_average": 6.0,
             "vote_count": 75,
             "release_date": "2017-05-25",
             "poster_path": "https://image.tmdb.org/t/p/w500/fJxqYE0Li9Xcz45G2srBKUQzcwC.jpg",
@@ -21,8 +21,8 @@
         {
             "id": 485548,
             "title": "Parallel Love: The Story of a Band Called Luxury",
-            "tagline": "",
-            "vote_average": 0,
+            "tagline": "movie tagline",
+            "vote_average": 7.0,
             "vote_count": 0,
             "release_date": "2018-04-01",
             "poster_path": "https://image.tmdb.org/t/p/w500/qCvae8HztqvWANAD5UOs9GBWPxG.jpg",
@@ -32,7 +32,7 @@
             "genres": [
                 "Documentary"
             ],
-            "runtime": null
+            "runtime": 109
         },
         {
             "id": 580,
@@ -90,7 +90,7 @@
         {
             "id": 49948,
             "title": "Fantasia 2000",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 7.1,
             "vote_count": 380,
             "release_date": "1999-12-17",
@@ -159,7 +159,7 @@
             "id": 467867,
             "title": "Paterno",
             "tagline": "The greater the legend, the harder the fall.",
-            "vote_average": 0,
+            "vote_average": 5.0,
             "vote_count": 0,
             "release_date": "2018-04-07",
             "poster_path": "https://image.tmdb.org/t/p/w500/Ad4y2Cc2FcY1wOk3DH7HVWlrgEM.jpg",
@@ -176,7 +176,7 @@
             "id": 10634,
             "title": "Friday",
             "tagline": "A lot can go down between thursday and saturday...",
-            "vote_average": 7,
+            "vote_average": 7.0,
             "vote_count": 630,
             "release_date": "1995-04-26",
             "poster_path": "https://image.tmdb.org/t/p/w500/z76scMklBnEC91CFqHcvqrS5coO.jpg",
@@ -191,7 +191,7 @@
         {
             "id": 80295,
             "title": "14 and Under",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.5,
             "vote_count": 10,
             "release_date": "1973-08-16",
@@ -243,7 +243,7 @@
         {
             "id": 504997,
             "title": "Lego DC Comics Super Heroes: The Flash",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 7.6,
             "vote_count": 13,
             "release_date": "2018-02-13",
@@ -280,7 +280,7 @@
         {
             "id": 345923,
             "title": "All I See Is You",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 4.3,
             "vote_count": 98,
             "release_date": "2017-08-10",
@@ -297,8 +297,8 @@
         {
             "id": 412059,
             "title": "Mobile Homes",
-            "tagline": "",
-            "vote_average": 0,
+            "tagline": "movie tagline",
+            "vote_average": 4.0,
             "vote_count": 1,
             "release_date": "2018-04-04",
             "poster_path": "https://image.tmdb.org/t/p/w500/of72rtl3j0C9yJMlSJZHXnaByz8.jpg",
@@ -313,8 +313,8 @@
         {
             "id": 287947,
             "title": "Shazam!",
-            "tagline": "",
-            "vote_average": 0,
+            "tagline": "movie tagline",
+            "vote_average": 9.0,
             "vote_count": 5,
             "release_date": "2019-04-05",
             "poster_path": "https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg",
@@ -327,7 +327,7 @@
                 "Fantasy",
                 "Science Fiction"
             ],
-            "runtime": null
+            "runtime": 109
         },
         {
             "id": 12201,
@@ -369,7 +369,7 @@
             "id": 423988,
             "title": "Kill Switch",
             "tagline": "Worlds will collide",
-            "vote_average": 5,
+            "vote_average": 5.0,
             "vote_count": 81,
             "release_date": "2017-06-01",
             "poster_path": "https://image.tmdb.org/t/p/w500/8K6pfMcT3hiIlCFw2RrHoXLshxl.jpg",
@@ -402,7 +402,7 @@
         {
             "id": 431572,
             "title": "JoJo's Bizarre Adventure: Diamond Is Unbreakable - Chapter 1",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.9,
             "vote_count": 11,
             "release_date": "2017-08-04",
@@ -436,7 +436,7 @@
         {
             "id": 438347,
             "title": "Wedding Unplanned",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.2,
             "vote_count": 143,
             "release_date": "2017-04-26",
@@ -453,8 +453,8 @@
         {
             "id": 476631,
             "title": "Barbie: Dolphin Magic",
-            "tagline": "",
-            "vote_average": 8,
+            "tagline": "movie tagline",
+            "vote_average": 8.8,
             "vote_count": 11,
             "release_date": "2017-10-13",
             "poster_path": "https://image.tmdb.org/t/p/w500/nhIbWv5J9VsvzTxfR09cchqpBzz.jpg",
@@ -577,7 +577,7 @@
         {
             "id": 400136,
             "title": "Resident Evil: Vendetta",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.4,
             "vote_count": 240,
             "release_date": "2017-05-27",
@@ -598,7 +598,7 @@
         {
             "id": 2212,
             "title": "Nightwatch",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.1,
             "vote_count": 138,
             "release_date": "1997-01-31",
@@ -618,8 +618,8 @@
         {
             "id": 451945,
             "title": "BPM",
-            "tagline": "",
-            "vote_average": 8,
+            "tagline": "movie tagline",
+            "vote_average": 8.8,
             "vote_count": 378,
             "release_date": "2017-08-23",
             "poster_path": "https://image.tmdb.org/t/p/w500/azLtGx5ZhdTSP2b4oNLWtiE51OW.jpg",
@@ -652,8 +652,8 @@
         {
             "id": 457962,
             "title": "Shimmer Lake",
-            "tagline": "",
-            "vote_average": 6,
+            "tagline": "movie tagline",
+            "vote_average": 6.8,
             "vote_count": 121,
             "release_date": "2017-06-09",
             "poster_path": "https://image.tmdb.org/t/p/w500/bQHhpTHiys0CZRrdDRKvXBmM5KL.jpg",
@@ -671,7 +671,7 @@
         {
             "id": 430424,
             "title": "See You Up There",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 8.1,
             "vote_count": 291,
             "release_date": "2017-10-25",
@@ -687,7 +687,7 @@
         {
             "id": 426238,
             "title": "Beach Rats",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.2,
             "vote_count": 80,
             "release_date": "2017-08-25",
@@ -740,7 +740,7 @@
         {
             "id": 377275,
             "title": "In Bed with Victoria",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 5.5,
             "vote_count": 158,
             "release_date": "2016-09-14",
@@ -758,7 +758,7 @@
         {
             "id": 378064,
             "title": "A Silent Voice",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 8.3,
             "vote_count": 400,
             "release_date": "2016-09-17",
@@ -793,7 +793,7 @@
         {
             "id": 109689,
             "title": "I Want You",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.6,
             "vote_count": 408,
             "release_date": "2012-06-22",
@@ -810,8 +810,8 @@
         {
             "id": 512291,
             "title": "Parole",
-            "tagline": "",
-            "vote_average": 0,
+            "tagline": "movie tagline",
+            "vote_average": 8.0,
             "vote_count": 0,
             "release_date": "2018-04-05",
             "poster_path": "https://image.tmdb.org/t/p/w500/AipFO5zJIZWs9K7TSLczQkiq90U.jpg",
@@ -822,12 +822,12 @@
                 "Action",
                 "Family"
             ],
-            "runtime": null
+            "runtime": 109
         },
         {
             "id": 398181,
             "title": "You Were Never Really Here",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.6,
             "vote_count": 94,
             "release_date": "2017-11-08",
@@ -845,7 +845,7 @@
         {
             "id": 376134,
             "title": "The Discovery",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.2,
             "vote_count": 475,
             "release_date": "2017-03-31",
@@ -864,7 +864,7 @@
         {
             "id": 432527,
             "title": "Padmaavat",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.9,
             "vote_count": 44,
             "release_date": "2018-01-25",
@@ -880,7 +880,7 @@
         {
             "id": 407439,
             "title": "Mary Magdalene",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.5,
             "vote_count": 42,
             "release_date": "2018-03-15",
@@ -913,7 +913,7 @@
         {
             "id": 11584,
             "title": "Roxanne",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.4,
             "vote_count": 207,
             "release_date": "1987-06-19",
@@ -949,7 +949,7 @@
         {
             "id": 6399,
             "title": "A Friend Is a Treasure",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 6.9,
             "vote_count": 169,
             "release_date": "1981-12-09",
@@ -1036,8 +1036,8 @@
         {
             "id": 426251,
             "title": "Love After Love",
-            "tagline": "",
-            "vote_average": 0,
+            "tagline": "movie tagline",
+            "vote_average": 8.0,
             "vote_count": 1,
             "release_date": "2018-03-30",
             "poster_path": "https://image.tmdb.org/t/p/w500/rvPAfO18Kk4C9jcOvlJao70jSCj.jpg",
@@ -1088,7 +1088,7 @@
         {
             "id": 487702,
             "title": "F*&% the Prom",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 5.6,
             "vote_count": 48,
             "release_date": "2017-12-05",
@@ -1104,8 +1104,8 @@
         {
             "id": 458355,
             "title": "Bedroom Eyes",
-            "tagline": "",
-            "vote_average": 6,
+            "tagline": "movie tagline",
+            "vote_average": 6.8,
             "vote_count": 1,
             "release_date": "2017-04-04",
             "poster_path": "https://image.tmdb.org/t/p/w500/d2OBAb68xY4u6M6OV44hf1Rocrv.jpg",
@@ -1120,7 +1120,7 @@
         {
             "id": 455714,
             "title": "Bad Genius",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 7.4,
             "vote_count": 73,
             "release_date": "2017-05-03",
@@ -1210,7 +1210,7 @@
             "id": 11878,
             "title": "Yojimbo",
             "tagline": "Better if all these men were dead. Think about it!",
-            "vote_average": 8,
+            "vote_average": 8.8,
             "vote_count": 405,
             "release_date": "1961-04-25",
             "poster_path": "https://image.tmdb.org/t/p/w500/tN7kYPjRhDolpui9sc9Eq9n5b2O.jpg",
@@ -1226,7 +1226,7 @@
         {
             "id": 8816,
             "title": "My Life as a Dog",
-            "tagline": "",
+            "tagline": "movie tagline",
             "vote_average": 7.4,
             "vote_count": 83,
             "release_date": "1985-12-12",

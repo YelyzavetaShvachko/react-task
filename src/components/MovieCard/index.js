@@ -8,27 +8,11 @@ import { setActiveMovie } from '../../store/actions/actionCreators';
 
 function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
-  // const setMovieData = () => {};
   const { setDetailsVisibility } = useContext(HeaderContext);
-
-  useEffect(() => {
-    console.log('render movie card');
-  });
-
   const dispatch = useDispatch();
 
   const handleClick = useCallback(() => {
     dispatch(setActiveMovie(props.id));
-    // setMovieData({
-    //   title: props.title,
-    //   genre: props.genre,
-    //   year: props.year,
-    //   duration: props.duration,
-    //   photo: props.photo,
-    //   id: props.id,
-    //   raiting: props.raiting,
-    //   description: props.description
-    // });
   }, [props]);
 
   const handleDetailsVisibility = useCallback(() => {

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
+import { movieId, moviesList } from '../../store/selectors';
 import {
   MovieDetailsBackground,
   MovieDetailsWrapper,
@@ -17,10 +18,8 @@ import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetails = () => {
   const { detailsVisibility } = useContext(HeaderContext);
-  const activeMovieId = useSelector(state => state.activeMovie.id);
-  const movieData = useSelector(
-    state => state.moviesData.movies.find(movie => movie.id === activeMovieId) || {}
-  );
+  const activeMovieId = useSelector(movieId);
+  const movieData = useSelector(moviesList).find(movie => movie.id === activeMovieId) || {};
 
   return (
     <div className={detailsVisibility ? 'show' : 'hidden'} >
@@ -36,14 +35,14 @@ const MovieDetails = () => {
             <MovieDetailsContent>
               <MovieDetailsTitleWrap>
                 <MovieDetailsTitle>{movieData.title}</MovieDetailsTitle>
-                <MovieDetailsRaiting>{movieData.raiting}</MovieDetailsRaiting>
+                <MovieDetailsRaiting>{movieData.vote_average}</MovieDetailsRaiting>
               </MovieDetailsTitleWrap>
-              <p>{movieData.genre}</p>
+              <p>{movieData.tagline}</p>
               <MovieDurationAndYear>
-                <span>{movieData.year && movieData.year.split('-')[0]}</span>
-                <span>{movieData.duration}</span>
+                <span>{movieData.release_date && movieData.release_date.split('-')[0]}</span>
+                <span>{movieData.runtime} min</span>
               </MovieDurationAndYear>
-              <p>{movieData.description}</p>
+              <p>{movieData.overview}</p>
             </MovieDetailsContent>
           </MovieDetailsWrapper>
         </div>
