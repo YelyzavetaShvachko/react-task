@@ -34,7 +34,7 @@ const CategoriesSection = () => {
     <CategoriesWrapper>
       {categories.map((category) =>
         <Category
-          styleName={activeGenre.title == category.title ? 'category active' : 'category'}
+          styleName={activeGenre.title.toUpperCase() == category.title ? 'category active' : 'category'}
           title={category.title}
           key={category.id}
         />

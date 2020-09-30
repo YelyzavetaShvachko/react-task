@@ -1,11 +1,13 @@
 import React from 'react';
 import { SearchResults, MoviesAmount } from '../styled.js';
 
-const TotalMoviesAmount = () => (
-  <SearchResults className='container'>
-    <MoviesAmount>39 </MoviesAmount>
+const TotalMoviesAmount = ({ count }) => {
+  return (
+    <SearchResults className='container'>
+      <MoviesAmount>{count} </MoviesAmount>
     movies found
-  </SearchResults>
-);
+    </SearchResults>
+  );
+};
 
 export default TotalMoviesAmount;

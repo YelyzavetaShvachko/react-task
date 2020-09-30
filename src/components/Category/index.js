@@ -8,7 +8,7 @@ import { setActiveGenre } from '../../store/actions/actionCreators';
 const CategoryItem = ({ title, styleName }) => {
   const dispatch = useDispatch();
   const handleClick = useCallback(() => {
-    dispatch(setActiveGenre(title));
+    dispatch(setActiveGenre(title.toLowerCase()));
   }, [title]);
 
   return (

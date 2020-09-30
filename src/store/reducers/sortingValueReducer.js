@@ -1,7 +1,7 @@
 import { SET_SORTING_VALUE } from '../actions/actionTypes';
 
 const initialState = {
-  sortingBy: 'RELEASE DATE'
+  sortingBy: 'release_date'
 };
 
 export const sortingValueReducer = (state = initialState, action) => {

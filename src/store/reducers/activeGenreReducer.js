@@ -1,7 +1,7 @@
 import { SET_ACTIVE_GENRE } from '../actions/actionTypes';
 
 const initialState = {
-  title: 'ALL'
+  title: 'all'
 };
 
 export const activeGenreReducer = (state = initialState, action) => {

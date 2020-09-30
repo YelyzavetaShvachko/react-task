@@ -21,6 +21,7 @@ const MoviesList = () => {
   }, []);
 
   const movies = useSelector(moviesList);
+  const moviesCount = movies.length;
   console.log('movies', movies);
 
   return (
@@ -29,7 +30,7 @@ const MoviesList = () => {
         <Categories />
         <Sorting />
       </Navigation>
-      <SearchResults />
+      <SearchResults count={moviesCount} />
       <MoviesWrapper className='container'>
         {movies.map((movie) =>
           <MovieCard
