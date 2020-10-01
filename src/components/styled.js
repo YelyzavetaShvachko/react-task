@@ -26,7 +26,7 @@ export const Title = styled.h1`
     margin-bottom: 30px;
 `;
 
-export const SearchForm = styled.form`
+export const SearchForm = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;    

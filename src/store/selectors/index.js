@@ -12,7 +12,7 @@ export const moviesList = state => {
     : (state.moviesData.movies || [])
       .filter(m => m.genres.map(g => g.toLowerCase()).includes(filterBy));
 
-  return filteredMovies.sort((a, b) => parseFloat(b[sortingBy]) - parseFloat(a[sortingBy]));
+  return [...filteredMovies].sort((a, b) => parseFloat(b[sortingBy]) - parseFloat(a[sortingBy]));
 };
 export const genre = state => state.activeGenre;
 export const movieId = state => state.activeMovie.id;
