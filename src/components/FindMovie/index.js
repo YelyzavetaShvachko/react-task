@@ -1,16 +1,23 @@
-import React, {useState} from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearchingMovie } from '../../store/actions/actionCreators';
 import { Title, SearchForm, SearchInput, SearchBtn } from '../styled.js';
 
 const SearchMovieSection = () => {
-  const [searchKey, setSearchKey] = useState('');
+  let movie;
+  const dispatch = useDispatch();
+
+  const handleClick = useCallback(() => {
+    dispatch(setSearchingMovie(movie.toLowerCase()));
+  }, [dispatch]);
   return (
     <div className='find-movie-wrapper'>
       <Title>FIND YOUR MOVIE</Title>
       <SearchForm>
         <SearchInput
           placeholder='What do you want to watch?'
-          onChange={e => setSearchKey(e.target.value)}/>
-        <SearchBtn onClick={() => console.log('searchKey',searchKey)}>SEARCH</SearchBtn>
+          onChange={e => movie = e.target.value}/>
+        <SearchBtn onClick={handleClick}>SEARCH</SearchBtn>
       </SearchForm>
     </div>
   );

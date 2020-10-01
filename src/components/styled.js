@@ -35,6 +35,7 @@ export const SearchForm = styled.div`
 export const SearchInput = styled.input`
     width: 73%;
     background-color: #1d1c1c;
+    color: #ffffff;
     padding: 16px 10px;
     opacity: 0.9;
     font-size: 18px;

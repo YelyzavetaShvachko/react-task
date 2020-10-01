@@ -7,7 +7,8 @@ import {
   FAIL_FETCH_MOVIE,
   SET_ACTIVE_MOVIE,
   SET_ACTIVE_GENRE,
-  SET_SORTING_VALUE
+  SET_SORTING_VALUE, 
+  SET_SEARCHING_MOVIE
 } from './actionTypes';
 
 const addMovie = (movie) => ({ type: ADD_MOVIE, payload: movie });
@@ -19,6 +20,7 @@ const failMovies = () => ({type: FAIL_FETCH_MOVIE});
 const setActiveMovie = (payload) => ({type: SET_ACTIVE_MOVIE, payload});
 const setActiveGenre = (payload) => ({type: SET_ACTIVE_GENRE, payload});
 const setSortingValue = (payload) => ({type: SET_SORTING_VALUE, payload});
+const setSearchingMovie = (payload) => ({type: SET_SEARCHING_MOVIE, payload});
 
 export {
   addMovie,
@@ -30,4 +32,5 @@ export {
   setActiveMovie,
   setActiveGenre,
   setSortingValue,
+  setSearchingMovie
 };
