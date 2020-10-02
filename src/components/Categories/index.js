@@ -1,45 +1,46 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { genre } from '../../store/selectors';
 import Category from '../Category';
 import { CategoriesWrapper } from '../styled.js';
 
 const categories = [
   {
     title: 'ALL',
-    styleName: 'category active',
     id: '1'
   },
   {
     title: 'DOCUMENTARY',
-    styleName: 'category',
     id: '2'
   },
   {
     title: 'COMEDY',
-    styleName: 'category',
     id: '3'
   },
   {
     title: 'HORROR',
-    styleName: 'category',
     id: '4'
   },
   {
     title: 'CRIME',
-    styleName: 'category',
     id: '5'
   }
 ];
 
-const CategoriesSection = () => (
-  <CategoriesWrapper>
-    {categories.map((category) =>
-      <Category
-        title={category.title}
-        styleName={category.styleName}
-        key={category.id}
-      />
-    )}
-  </CategoriesWrapper>
-);
+const CategoriesSection = () => {
+  const activeGenre = useSelector(genre);
+
+  return (
+    <CategoriesWrapper>
+      {categories.map((category) =>
+        <Category
+          styleName={activeGenre.title.toUpperCase() == category.title ? 'category active' : 'category'}
+          title={category.title}
+          key={category.id}
+        />
+      )}
+    </CategoriesWrapper>
+  );
+};
 
 export default CategoriesSection;
