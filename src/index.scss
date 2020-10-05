@@ -24,6 +24,10 @@ body {
     display: block;
   }
 
+  .has-error {
+    border: 1px solid #f65261;
+  }
+
   .svg-icon-netflix-logo {
     fill: #f65261;
     height: 36px;
