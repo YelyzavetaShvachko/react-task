@@ -8,7 +8,8 @@
   outline: none;
 }
 
-button, input {
+button,
+input {
   border: none;
 }
 
@@ -30,8 +31,8 @@ body {
 
   .svg-icon-netflix-logo {
     fill: #f65261;
-    height: 36px;
-    width: 134px;
+    height: 24px;
+    width: 90px;
   }
 
   .container {
@@ -70,7 +71,7 @@ body {
     .movie-icon {
       display: none;
     }
-    
+
     .movie-card-hovered {
       .movie-icon {
         display: block;
@@ -80,10 +81,30 @@ body {
 
   footer {
     svg {
-      height: 32px;
-      width: 130px;
+      height: 24px;
+      width: 90px;
       display: block;
       margin: 0 auto;
+    }
+  }
+
+  .page-not-found {
+    .svg-icon-netflix-logo {
+      position: absolute;
+      left: 30px;
+      top: 20px;
+    }
+
+    footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+
+      .svg-icon-netflix-logo {
+        position: relative;
+        left: 0;
+        top: 0;
+      }
     }
   }
 }

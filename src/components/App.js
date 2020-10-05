@@ -9,6 +9,7 @@ import MovieDetails from './MovieDetails';
 import { HeaderContext } from '../hooks/HeaderContext';
 import { Provider } from 'react-redux';
 import store from '../store/store';
+import PageNotFound from './PageNotFound';
 
 function App() {
   // Use Bomb to check ErrorBoundary
@@ -21,6 +22,7 @@ function App() {
     <Provider store={store}>
       <ModalProvider>
         <HeaderContext.Provider value={{ detailsVisibility, setDetailsVisibility }}>
+          <PageNotFound />
           <Header />
           <ErrorBoundary
             FallbackComponent={ErrorFallback}
@@ -30,7 +32,6 @@ function App() {
             <MoviesList />
           </ErrorBoundary>
           <Footer />
-          {/* <ModalsList /> */}
         </HeaderContext.Provider>
       </ModalProvider>
     </Provider>

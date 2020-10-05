@@ -77,91 +77,91 @@ const AddMovieContext = () => {
           isSubmitting,
           resetForm
         }) => (
-            <ModalForm onSubmit={handleSubmit} >
-              <FormItem htmlFor="title" >
+          <ModalForm onSubmit={handleSubmit} >
+            <FormItem htmlFor="title" >
                 TITLE
               <FormInput
-                  type="text"
-                  value={values.title}
-                  placeholder="Moana"
-                  id="title"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.title && errors.title ? 'has-error' : null}
-                />
-                <FormError touched={touched.title} message={errors.title} />
-              </FormItem>
-              <FormItem htmlFor="date" >
+                type="text"
+                value={values.title}
+                placeholder="Moana"
+                id="title"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.title && errors.title ? 'has-error' : null}
+              />
+              <FormError touched={touched.title} message={errors.title} />
+            </FormItem>
+            <FormItem htmlFor="date" >
                 RELEASE DATE
               <FormInput
-                  type="text"
-                  placeholder="Select Date MM/dd/yyyy"
-                  id="date"
-                  value={values.date}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.date && errors.date ? 'has-error' : null}
-                />
-                <FormError touched={touched.date} message={errors.date} />
-              </FormItem>
-              <FormItem htmlFor="link">
+                type="text"
+                placeholder="Select Date MM/dd/yyyy"
+                id="date"
+                value={values.date}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.date && errors.date ? 'has-error' : null}
+              />
+              <FormError touched={touched.date} message={errors.date} />
+            </FormItem>
+            <FormItem htmlFor="link">
                 MOVIE URL
               <FormInput
-                  type="text"
-                  placeholder="Movie URL here"
-                  id="link"
-                  value={values.link}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.link && errors.link ? 'has-error' : null}
-                />
-                <FormError touched={touched.link} message={errors.link} />
-              </FormItem>
-              <FormItem htmlFor="genre" >
+                type="text"
+                placeholder="Movie URL here"
+                id="link"
+                value={values.link}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.link && errors.link ? 'has-error' : null}
+              />
+              <FormError touched={touched.link} message={errors.link} />
+            </FormItem>
+            <FormItem htmlFor="genre" >
                 GENRE
               <FormInput
-                  type="text"
-                  placeholder="Select Genre"
-                  id="genre"
-                  value={values.genre}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.genre && errors.genre ? 'has-error' : null}
-                />
-                <FormError touched={touched.genre} message={errors.genre} />
-              </FormItem>
-              <FormItem htmlFor="overview" >
+                type="text"
+                placeholder="Select Genre"
+                id="genre"
+                value={values.genre}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.genre && errors.genre ? 'has-error' : null}
+              />
+              <FormError touched={touched.genre} message={errors.genre} />
+            </FormItem>
+            <FormItem htmlFor="overview" >
                 OVERVIEW
               <FormInput
-                  type="text"
-                  placeholder="Overview here"
-                  id="overview"
-                  value={values.overview}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.overview && errors.overview ? 'has-error' : null}
-                />
-                <FormError touched={touched.overview} message={errors.overview} />
-              </FormItem>
-              <FormItem htmlFor="runtime" >
+                type="text"
+                placeholder="Overview here"
+                id="overview"
+                value={values.overview}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.overview && errors.overview ? 'has-error' : null}
+              />
+              <FormError touched={touched.overview} message={errors.overview} />
+            </FormItem>
+            <FormItem htmlFor="runtime" >
                 RUNTIME
               <FormInput
-                  type="text"
-                  placeholder="Runtime here"
-                  id="runtime"
-                  value={values.runtime}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={touched.runtime && errors.runtime ? 'has-error' : null}
-                />
-                <FormError touched={touched.runtime} message={errors.runtime} />
-              </FormItem>
-              <BtnWrapper>
-                <CancelBtn onClick={() => resetForm(initialValues)}>RESET</CancelBtn>
-                <SubmitBtn disabled={isSubmitting} type="submit">SUBMIT</SubmitBtn>
-              </BtnWrapper>
-            </ModalForm>
-          )}
+                type="text"
+                placeholder="Runtime here"
+                id="runtime"
+                value={values.runtime}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={touched.runtime && errors.runtime ? 'has-error' : null}
+              />
+              <FormError touched={touched.runtime} message={errors.runtime} />
+            </FormItem>
+            <BtnWrapper>
+              <CancelBtn onClick={() => resetForm(initialValues)}>RESET</CancelBtn>
+              <SubmitBtn disabled={isSubmitting} type="submit">SUBMIT</SubmitBtn>
+            </BtnWrapper>
+          </ModalForm>
+        )}
       </Formik>
     </>
   );

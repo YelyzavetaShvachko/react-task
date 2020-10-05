@@ -51,7 +51,7 @@ export const SearchBtn = styled.button`
 
 export const Footer = styled.footer`
     background-color: #424242;
-    padding: 25px;
+    padding: 16px;
 `;
 
 export const Background = styled.div`
@@ -415,4 +415,36 @@ export const MovieDurationAndYear = styled.div`
 
 export const MovieDetailsImg = styled.img`
     height: 340px;
+`;
+
+// 404 page not found
+export const PnfWrap = styled.div`
+    height: 100vh;
+    background-color: #121212;
+`;
+
+export const PnfContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 20%;
+`;
+
+export const PnfTitle = styled.h1`
+    color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 0.2rem;
+    margin-bottom: 20px;
+`;
+
+export const PnfBtn = styled.button`
+    color: #f65261;
+    font-size: 24px;
+    border: 1px solid #f65261;
+    background: transparent;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 25px;
+    margin-top: 40px;
 `;
