@@ -15,6 +15,7 @@ const MoviesList = () => {
   useEffect(() => {
     dispatch(requestMovies());
     axios
+    // which port better use as db ?
       .get('http://localhost:3001/movies')
       .then(movies => dispatch(successMovies(movies.data)))
       .catch(() => dispatch(failMovies()));

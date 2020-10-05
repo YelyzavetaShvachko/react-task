@@ -1,39 +1,24 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import MoviesList from './MoviesList';
-import Footer from './Footer';
-import ErrorFallback from './ErrorFallback';
-import { ErrorBoundary } from 'react-error-boundary';
-import { ModalProvider } from '../state/context';
-import MovieDetails from './MovieDetails';
-import { HeaderContext } from '../hooks/HeaderContext';
+import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import store from '../store/store';
+
+import HomePage from './HomePage';
 import PageNotFound from './PageNotFound';
 
 function App() {
-  // Use Bomb to check ErrorBoundary
-  // function Bomb() {
-  //   throw new Error('💥 CABOOM 💥')
-  // }
-  const [detailsVisibility, setDetailsVisibility] = useState(false);
-
   return (
     <Provider store={store}>
-      <ModalProvider>
-        <HeaderContext.Provider value={{ detailsVisibility, setDetailsVisibility }}>
-          <PageNotFound />
-          <Header />
-          <ErrorBoundary
-            FallbackComponent={ErrorFallback}
-          >
-            <MovieDetails />
-            {/* <Bomb />   */}
-            <MoviesList />
-          </ErrorBoundary>
-          <Footer />
-        </HeaderContext.Provider>
-      </ModalProvider>
+      <Router>
+        <Link to="/404">
+          <h2>Go for 404</h2>
+        </Link>
+        <Switch>
+          <Route exact path="/404" component={PageNotFound}>
+          </Route>
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </Router>
     </Provider>
   );
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import img from '../assets/img/background.jpg';
+import {Link} from 'react-router-dom';
 
 export const AddMovie = styled.button`
     position: absolute;
@@ -73,7 +74,7 @@ export const Background = styled.div`
   }
 `;
 
-export const MovieCard = styled.div`
+export const MovieCard = styled(Link)`
     background-color: #232323;
     width: 30%;
     margin-bottom: 50px;

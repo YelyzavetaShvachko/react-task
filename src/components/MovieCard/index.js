@@ -1,8 +1,9 @@
 import React, { useState, useContext, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
 import MovieIcon from '../MovieIcon';
-import PropTypes from 'prop-types';
 import { HeaderContext } from '../../hooks/HeaderContext';
 import { setActiveMovie } from '../../store/actions/actionCreators';
 
@@ -29,6 +30,7 @@ function MovieCardWrapper(props) {
 
   return (
     <MovieCard
+      to={`/film/${props.id}`}
       className={hovered ? 'movie-card-hovered' : ''}
       onMouseEnter={handleHover}
       onMouseLeave={handleUnHover}
