@@ -16,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/404" component={PageNotFound} />
           <Route path="/" component={HomePage} />
+          {/* <Route component={PageNotFound} /> */}
         </Switch>
       </Router>
     </Provider>
