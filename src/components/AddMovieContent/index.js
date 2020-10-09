@@ -1,8 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addMovie, successAdd, failAdd } from '../../store/actions/actionCreators';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import FormError from '../FormError';
-
 import {
   ModalTitle,
   ModalForm,
@@ -39,8 +41,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const AddMovieContext = () => {
+  const dispatch = useDispatch();
   const initialValues = {
-    // same to input names
     title: '',
     date: '',
     link: '',
@@ -52,20 +54,26 @@ const AddMovieContext = () => {
   const formik = useFormik({
     initialValues: initialValues
   });
+
+  const handleOnSubmit = (values, { setSubmitting, resetForm }) => {
+    setSubmitting(true);
+    console.log('submitted data', values);
+    dispatch(addMovie());
+    axios
+      .post('http://localhost:3333/movies', values)
+      .then(() => dispatch(successAdd(values)))
+      .catch(() => dispatch(failAdd()));
+    resetForm();
+    setSubmitting(false);
+  };
+
   return (
     <>
       <ModalTitle>ADD MOVIE</ModalTitle>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true);
-          setTimeout(() => {
-            console.log('submitted data', JSON.stringify(values, null, 2));
-            resetForm();
-            setSubmitting(false);
-          }, 500);
-        }}
+        onSubmit={handleOnSubmit}
       >
         {({
           values,

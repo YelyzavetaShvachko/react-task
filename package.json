@@ -50,7 +50,7 @@
     "build:dev": "cross-env NODE_ENV=development node_modules/.bin/webpack",
     "code:check": "./node_modules/.bin/eslint '**/*.js'",
     "code:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
-    "start:db": "json-server --watch db.json -p 3001"
+    "start:db": "json-server --watch db.json -p 3333"
   },
   "author": "Yelyzaveta Shvachko",
   "dependencies": {

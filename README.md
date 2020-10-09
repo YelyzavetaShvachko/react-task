@@ -20,5 +20,5 @@ api url - http://localhost:4000/api-docs
 
 ## json-server
 npm install -g json-server
-in src folder (file db.json) run  json-server --watch db.json --port 3001
-data url - http://localhost:3001/movies
+in src folder (file db.json) run  json-server --watch db.json --port 3333
+data url - http://localhost:3333/movies

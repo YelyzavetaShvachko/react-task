@@ -14,8 +14,7 @@ function App() {
           <h2>Go for 404</h2>
         </Link>
         <Switch>
-          <Route exact path="/404" component={PageNotFound}>
-          </Route>
+          <Route exact path="/404" component={PageNotFound} />
           <Route path="/" component={HomePage} />
         </Switch>
       </Router>
