@@ -74,7 +74,7 @@ export const Background = styled.div`
   }
 `;
 
-export const MovieCard = styled(Link)`
+export const MovieCard = styled.div`
     background-color: #232323;
     width: 30%;
     margin-bottom: 50px;
@@ -106,6 +106,7 @@ export const Year = styled.span`
 export const DescriptionWrapper = styled.div`
     position: relative;
     font-size: 16px;
+    color: #a2a2a2;
 `;
 
 export const Genre = styled.p`

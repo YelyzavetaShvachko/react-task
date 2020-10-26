@@ -57,7 +57,7 @@ const EditMovieContent = () => {
     console.log('edit data', values);
     dispatch(editMovie());
     axios
-      .put('http://localhost:3333/movies', values)
+      .put(`http://localhost:3333/movies/${activeMovieId}`, values)
       .then(() => dispatch(successEdit(values)))
       .catch(() => dispatch(failEdit()));
     resetForm();
@@ -71,15 +71,6 @@ const EditMovieContent = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleOnSubmit}
-        // onSubmit={(values, { setSubmitting, resetForm }) => {
-        //   console.log('submit edit');
-        //   setSubmitting(true);
-        //   setTimeout(() => {
-        //     console.log('submitted data', JSON.stringify(values, null, 2));
-        //     resetForm();
-        //     setSubmitting(false);
-        //   }, 500);
-        // }}
       >
         {({
           values,

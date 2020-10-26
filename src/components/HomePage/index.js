@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { ModalProvider } from '../../state/context';
+import { useSelector, useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { movieId } from '../../store/selectors';
+import { setActiveMovie } from '../../store/actions/actionCreators';
 
 import Header from '../Header';
 import MoviesList from '../MoviesList';
@@ -7,28 +11,31 @@ import Footer from '../Footer';
 import ErrorFallback from '../ErrorFallback';
 import { ErrorBoundary } from 'react-error-boundary';
 import MovieDetails from '../MovieDetails';
-import { HeaderContext } from '../../hooks/HeaderContext';
 
-function HomePage() {
+function HomePage({ match }) {
   // Use Bomb to check ErrorBoundary
   // function Bomb() {
   //   throw new Error('💥 CABOOM 💥')
   // }
-  const [detailsVisibility, setDetailsVisibility] = useState(false);
+  const filmId = Number(match?.params?.id);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (filmId) {
+      dispatch(setActiveMovie(filmId));
+    }
+  }, [filmId, dispatch]);
 
   return (
     <ModalProvider>
-      <HeaderContext.Provider value={{ detailsVisibility, setDetailsVisibility }}>
-        <Header />
-        <ErrorBoundary
-          FallbackComponent={ErrorFallback}
-        >
-          <MovieDetails />
-          {/* <Bomb />   */}
-          <MoviesList />
-        </ErrorBoundary>
-        <Footer />
-      </HeaderContext.Provider>
+      <ErrorBoundary
+        FallbackComponent={ErrorFallback}
+      >
+        {filmId ? <MovieDetails /> : <Header />}
+        {/* <Bomb />   */}
+        <MoviesList />
+      </ErrorBoundary>
+      <Footer />
     </ModalProvider>
   );
 }

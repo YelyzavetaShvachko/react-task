@@ -23,7 +23,7 @@ const MoviesList = () => {
 
   const movies = useSelector(moviesList);
   const moviesCount = movies.length;
-  console.log('movies', movies);
+  // console.log('movies', movies);
 
   return (
     <MoviesSection className='content'>

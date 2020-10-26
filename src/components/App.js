@@ -10,13 +10,11 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Link to="/404">
-          <h2>Go for 404</h2>
-        </Link>
         <Switch>
-          <Route exact path="/404" component={PageNotFound} />
-          <Route path="/" component={HomePage} />
-          {/* <Route component={PageNotFound} /> */}
+          <Route exact path="/" component={HomePage} />
+          <Route path="/film/:id" render={(props) => <HomePage {...props} />} />  
+          <Route path="/search" render={(props) => <HomePage {...props} />} />  
+          <Route path="*" component={PageNotFound} />  
         </Switch>
       </Router>
     </Provider>
