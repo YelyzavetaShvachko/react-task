@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Background } from '../styled.js';
 import Logo from '../../assets/img/logo.svg';
 import AddMovie from '../AddMovie';

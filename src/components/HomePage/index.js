@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { ModalProvider } from '../../state/context';
-import { useSelector, useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { movieId } from '../../store/selectors';
+import { useDispatch } from 'react-redux';
 import { setActiveMovie } from '../../store/actions/actionCreators';
 
 import Header from '../Header';

@@ -1,10 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { setSearchingMovie } from '../../store/actions/actionCreators';
 import { Title, SearchForm, SearchInput, SearchBtn } from '../styled.js';
-
-const useQuery = () => new URLSearchParams(useLocation().search);
 
 const SearchMovieSection = () => {
   const dispatch = useDispatch();
@@ -34,7 +32,7 @@ const SearchMovieSection = () => {
         <SearchBtn
           as={Link}
           // to={`/search?name=${searchedMovie}`}
-          to={{ pathname: "/search", search: `?name=${searchedMovie}` }}
+          to={{ pathname: '/search', search: `?name=${searchedMovie}` }}
           onClick={handleClick}
         >
           SEARCH

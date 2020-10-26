@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { movieId, moviesList } from '../../store/selectors';
 import {
@@ -20,9 +20,6 @@ const MovieDetails = () => {
   const movieDataList = useSelector(moviesList);
   const movieData = movieDataList.find(movie => movie.id === activeMovieId) || {};
   const showDetails = activeMovieId && movieDataList.length;
-  console.log('movieData, active id', movieData, activeMovieId);
-  console.log('movieDataList', movieDataList);
-  console.log('find', movieDataList.find(movie => movie.id));
 
   return (
     <div className='show' >
