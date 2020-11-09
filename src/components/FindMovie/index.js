@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setSearchingMovie } from '../../store/actions/actionCreators';
@@ -6,20 +6,22 @@ import { Title, SearchForm, SearchInput, SearchBtn } from '../styled.js';
 
 const SearchMovieSection = () => {
   const dispatch = useDispatch();
-  let movie;
-  let searchedMovie;
+  const [movieName, setMovieName] = useState('');
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchedMovie = urlParams.get('name');
+    setMovieName(searchedMovie || '');
+  },[]);
 
   const handleClick = useCallback(() => {
-    console.log('searchedMovie click', searchedMovie);
-    dispatch(setSearchingMovie(movie.toLowerCase()));
-  }, [dispatch]);
+    dispatch(setSearchingMovie(movieName.toLowerCase()));
+  }, [dispatch, movieName]);
 
   const handleChange = (e) => {
     e.preventDefault();
     e.persist();
-    movie = e.target.value;
-    searchedMovie = e.target.value.toLowerCase();
-    console.log('searchedMovie', searchedMovie);
+    setMovieName(e.target.value.toLowerCase());
   };
 
   return (
@@ -27,12 +29,12 @@ const SearchMovieSection = () => {
       <Title>FIND YOUR MOVIE</Title>
       <SearchForm>
         <SearchInput
+          value={movieName}
           placeholder='What do you want to watch?'
           onChange={handleChange} />
         <SearchBtn
           as={Link}
-          // to={`/search?name=${searchedMovie}`}
-          to={{ pathname: '/search', search: `?name=${searchedMovie}` }}
+          to={`/search?name=${movieName}`}
           onClick={handleClick}
         >
           SEARCH

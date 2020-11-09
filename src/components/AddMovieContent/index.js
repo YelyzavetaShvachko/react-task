@@ -1,6 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, successAdd, failAdd } from '../../store/actions/actionCreators';
+import { moviesList } from '../../store/selectors';
+import { successMovies, failMovies } from '../../store/actions/actionCreators';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -44,9 +46,9 @@ const AddMovieContext = () => {
   const dispatch = useDispatch();
   const initialValues = {
     title: '',
-    date: '',
-    link: '',
-    genre: '',
+    release_date: '',
+    poster_path: '',
+    genres: '',
     overview: '',
     runtime: ''
   };
@@ -55,14 +57,29 @@ const AddMovieContext = () => {
     initialValues: initialValues
   });
 
+  const normalizeData = ({ genre, date, link, ...rest }) => ({
+    ...rest,
+    genres: `${genre}`.split(/\W/).filter(item => !!item),
+    release_date: date,
+    poster_path: link
+  });
+
   const handleOnSubmit = (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
     console.log('submitted data', values);
     dispatch(addMovie());
     axios
-      .post('http://localhost:3333/movies', values)
-      .then(() => dispatch(successAdd(values)))
-      .catch(() => dispatch(failAdd()));
+      .post('http://localhost:3333/movies', normalizeData(values))
+      .then(() => dispatch(successAdd()))
+      .catch(() => dispatch(failAdd()))
+      .then(() => {
+        // const movies = useSelector(moviesList);
+        // dispatch(requestMovies());
+        axios
+          .get('http://localhost:3333/movies')
+          .then(movies => dispatch(successMovies(movies.data)))
+          .catch(() => dispatch(failMovies()));
+      });
     resetForm();
     setSubmitting(false);
   };

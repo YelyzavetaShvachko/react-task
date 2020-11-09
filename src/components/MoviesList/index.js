@@ -33,7 +33,7 @@ const MoviesList = () => {
       </Navigation>
       <SearchResults count={moviesCount} />
       <MoviesWrapper className='container'>
-        {movies.map((movie) =>
+        {movies.length ? movies.map((movie) =>
           <MovieCard
             title={movie.title}
             id={movie.id}
@@ -45,8 +45,8 @@ const MoviesList = () => {
             duration={`${movie.runtime} min`}
             raiting={movie.vote_average}
             key={movie.id}
-          />
-        )}
+          /> 
+        ) : <div>Not Found Component</div>}
       </MoviesWrapper>
     </MoviesSection>
   );

@@ -44,10 +44,11 @@ export const SearchInput = styled.input`
 
 export const SearchBtn = styled.button`
     width: 25%;
-    padding: 15px 0;
+    padding: 12px 0;
     font-size: 18px;
     background-color: #f65261;
     color: #ffffff;
+    text-align: center;
 `;
 
 export const Footer = styled.footer`

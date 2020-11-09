@@ -15,8 +15,8 @@ import {
   SET_SEARCHING_MOVIE
 } from './actionTypes';
 
-const addMovie = (payload) => ({ type: REQUEST_ADD_MOVIE, payload });
-const successAdd = (payload) => ({ type: SUCCESS_ADD_MOVIE, payload });
+const addMovie = () => ({ type: REQUEST_ADD_MOVIE });
+const successAdd = () => ({ type: SUCCESS_ADD_MOVIE });
 const failAdd = () => ({ type: FAIL_ADD_MOVIE });
 
 const editMovie = (payload) => ({ type: REQUEST_EDIT_MOVIE, payload });

@@ -16,8 +16,7 @@ export const addMovieReducer = (state = initialState, action) => {
     return {
       ...state,
       loading: false,
-      error: false,
-      movie: action.payload,
+      error: false
     };
   
   case REQUEST_ADD_MOVIE:

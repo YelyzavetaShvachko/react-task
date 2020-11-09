@@ -5,6 +5,8 @@ import { movieId, moviesList } from '../../store/selectors';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { successMovies, failMovies } from '../../store/actions/actionCreators';
+
 import FormError from '../FormError';
 import {
   ModalTitle,
@@ -42,7 +44,7 @@ const EditMovieContent = () => {
   const dispatch = useDispatch();
   const activeMovieId = useSelector(movieId);
   const movieData = useSelector(moviesList).find(movie => movie.id === activeMovieId) || {};
-  console.log('movieData', movieData);
+  // console.log('movieData', movieData);
   const initialValues = {
     title: movieData.title,
     date: movieData.release_date,
@@ -52,16 +54,32 @@ const EditMovieContent = () => {
     runtime: movieData.runtime
   };
 
+  const normalizeData = ({ genre, date, link, ...rest }) => ({
+    ...movieData,
+    ...rest,
+    genres: `${genre}`.split(/\W/).filter(item => !!item),
+    release_date: date,
+    poster_path: link
+  });
+
   const handleOnSubmit = (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
     console.log('edit data', values);
     dispatch(editMovie());
     axios
-      .put(`http://localhost:3333/movies/${activeMovieId}`, values)
+      .put(`http://localhost:3333/movies/${activeMovieId}`, normalizeData(values))
       .then(() => dispatch(successEdit(values)))
-      .catch(() => dispatch(failEdit()));
+      .catch(() => dispatch(failEdit()))
+      .then(() => {
+        axios
+          .get('http://localhost:3333/movies')
+          .then(movies => dispatch(successMovies(movies.data)))
+          .catch(() => dispatch(failMovies()));
+      });
     resetForm();
     setSubmitting(false);
+
+
   };
 
   return (
