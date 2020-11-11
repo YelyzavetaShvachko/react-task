@@ -24,7 +24,10 @@ const Modal = (props) => {
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired
+  show: PropTypes.oneOfType([
+    PropTypes.bool.isRequired,
+    PropTypes.oneOf([null]).isRequired
+  ])
 };
 
 export default Modal;
