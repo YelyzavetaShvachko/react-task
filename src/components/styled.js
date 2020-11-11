@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import img from '../assets/img/background.jpg';
+import {Link} from 'react-router-dom';
 
 export const AddMovie = styled.button`
     position: absolute;
@@ -43,15 +44,16 @@ export const SearchInput = styled.input`
 
 export const SearchBtn = styled.button`
     width: 25%;
-    padding: 15px 0;
+    padding: 12px 0;
     font-size: 18px;
     background-color: #f65261;
     color: #ffffff;
+    text-align: center;
 `;
 
 export const Footer = styled.footer`
     background-color: #424242;
-    padding: 25px;
+    padding: 16px;
 `;
 
 export const Background = styled.div`
@@ -105,6 +107,7 @@ export const Year = styled.span`
 export const DescriptionWrapper = styled.div`
     position: relative;
     font-size: 16px;
+    color: #a2a2a2;
 `;
 
 export const Genre = styled.p`
@@ -415,4 +418,36 @@ export const MovieDurationAndYear = styled.div`
 
 export const MovieDetailsImg = styled.img`
     height: 340px;
+`;
+
+// 404 page not found
+export const PnfWrap = styled.div`
+    height: 100vh;
+    background-color: #121212;
+`;
+
+export const PnfContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 20%;
+`;
+
+export const PnfTitle = styled.h1`
+    color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 0.2rem;
+    margin-bottom: 20px;
+`;
+
+export const PnfBtn = styled.button`
+    color: #f65261;
+    font-size: 24px;
+    border: 1px solid #f65261;
+    background: transparent;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 25px;
+    margin-top: 40px;
 `;

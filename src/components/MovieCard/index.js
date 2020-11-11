@@ -1,23 +1,21 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
+
 import { MovieCard, Image, Year, DescriptionWrapper, Genre } from '../styled.js';
 import MovieIcon from '../MovieIcon';
-import PropTypes from 'prop-types';
-import { HeaderContext } from '../../hooks/HeaderContext';
 import { setActiveMovie } from '../../store/actions/actionCreators';
 
 function MovieCardWrapper(props) {
   const [hovered, setHovered] = useState(false);
-  const { setDetailsVisibility } = useContext(HeaderContext);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = useCallback(() => {
     dispatch(setActiveMovie(props.id));
+    history.push(`/film/${props.id}`);
   }, [props]);
-
-  const handleDetailsVisibility = useCallback(() => {
-    setDetailsVisibility(true);
-  }, []);
 
   const handleHover = useCallback(() => {
     setHovered(true);
@@ -34,7 +32,6 @@ function MovieCardWrapper(props) {
       onMouseLeave={handleUnHover}
       onClick={() => {
         handleClick();
-        handleDetailsVisibility();
       }}
     >
       <Image src={props.photo} />
@@ -45,6 +42,7 @@ function MovieCardWrapper(props) {
         <Year>{props.year && props.year.split('-')[0]}</Year>
       </DescriptionWrapper>
     </MovieCard>
+    // {/* <MovieIcon /> */} outside Card, better to movie list
   );
 }
 

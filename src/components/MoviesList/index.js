@@ -15,14 +15,15 @@ const MoviesList = () => {
   useEffect(() => {
     dispatch(requestMovies());
     axios
-      .get('http://localhost:3001/movies')
+    // which port better use as db ?
+      .get('http://localhost:3333/movies')
       .then(movies => dispatch(successMovies(movies.data)))
       .catch(() => dispatch(failMovies()));
   }, []);
 
   const movies = useSelector(moviesList);
   const moviesCount = movies.length;
-  console.log('movies', movies);
+  // console.log('movies', movies);
 
   return (
     <MoviesSection className='content'>
@@ -32,7 +33,7 @@ const MoviesList = () => {
       </Navigation>
       <SearchResults count={moviesCount} />
       <MoviesWrapper className='container'>
-        {movies.map((movie) =>
+        {movies.length ? movies.map((movie) =>
           <MovieCard
             title={movie.title}
             id={movie.id}
@@ -44,8 +45,8 @@ const MoviesList = () => {
             duration={`${movie.runtime} min`}
             raiting={movie.vote_average}
             key={movie.id}
-          />
-        )}
+          /> 
+        ) : <div>Not Found Component</div>}
       </MoviesWrapper>
     </MoviesSection>
   );

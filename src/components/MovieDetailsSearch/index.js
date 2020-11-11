@@ -1,16 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import SearchIcon from '../SearchIcon';
-import { HeaderContext } from '../../hooks/HeaderContext';
 
 const MovieDetailsSearch = () => {
-  const { setDetailsVisibility } = useContext(HeaderContext);
-
   return (
-    <div onClick={() => {
-      setDetailsVisibility(false);
-    }}>
+    <Link to="/">
       <SearchIcon />
-    </div>
+    </Link>
   );
 };
 
