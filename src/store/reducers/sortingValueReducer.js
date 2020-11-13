@@ -4,7 +4,7 @@ const initialState = {
   sortingBy: 'release_date'
 };
 
-export const sortingValueReducer = (state = initialState, action) => {
+const sortingValueReducer = (state = initialState, action) => {
   switch (action.type) {
   case SET_SORTING_VALUE:
     return {
@@ -16,3 +16,5 @@ export const sortingValueReducer = (state = initialState, action) => {
     return state;
   }
 };
+
+export default sortingValueReducer;

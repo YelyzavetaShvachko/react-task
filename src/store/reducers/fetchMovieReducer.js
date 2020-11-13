@@ -10,7 +10,7 @@ const initialState = {
   error: false
 };
   
-export const fetchMovieReducer = (state = initialState, action) => {
+const fetchMovieReducer = (state = initialState, action) => {
   switch (action.type) {
   case SUCCESS_FETCH_MOVIE:
     return {
@@ -36,3 +36,5 @@ export const fetchMovieReducer = (state = initialState, action) => {
     return state;
   }
 };
+
+export default fetchMovieReducer;
