@@ -7,6 +7,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.11.0",
     "@testing-library/react": "^11.1.1",
     "@testing-library/react-hooks": "^3.4.2",
@@ -52,10 +53,12 @@
   "scripts": {
     "start": "concurrently \"npm run start:dev\" \"yarn run start:db\"",
     "test": "node scripts/test.js --watchAll --no-cache --coverage",
-    "start:prod": "cross-env NODE_ENV=production webpack-dev-server -p",
+    "start:server": "cross-env NODE_ENV=dev node ./server",
+    "build:server": "cross-env NODE_ENV=dev webpack --config ./webpack.config.server.js",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --history-api-fallback --watch",
-    "build:prod": "cross-env NODE_ENV=production webpack -p",
     "build:dev": "cross-env NODE_ENV=development webpack",
+    "start:prod": "cross-env NODE_ENV=production webpack-dev-server -p",
+    "build:prod": "cross-env NODE_ENV=production webpack -p",
     "code:check": "./node_modules/.bin/eslint '**/*.js'",
     "lint": "eslint ./src --ext .js,.jsx",
     "code:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
@@ -75,6 +78,7 @@
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.20.0",
     "babel-preset-react-app": "^10.0.0",
+    "express": "^4.17.1",
     "formik": "^2.1.7",
     "jest-svg-transformer": "^1.0.0",
     "prop-types": "^15.7.2",
@@ -88,6 +92,11 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.1.1",
+    "webpack-dev-middleware": "^4.0.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-hot-server-middleware": "^0.6.1",
+    "webpack-merge": "^5.4.0",
+    "webpack-node-externals": "^2.5.2",
     "yup": "^0.29.3"
   }
 }
