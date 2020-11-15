@@ -4,7 +4,7 @@ const serverRenderer = require('../dist/serverRenderer').default;
 const port = 3000;
 const app = express();
 
-app.use(express.static('dist'));
+app.use(express.static('build'));
 app.use(serverRenderer());
 
 app.listen(3000, () => {

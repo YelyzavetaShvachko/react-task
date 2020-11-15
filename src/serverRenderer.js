@@ -6,7 +6,7 @@ import path from "path";
 import App from "../src/components/App";
 
 function renderHtml(html) {
-  const data = fs.readFileSync(path.join("./dist", "index.html"), "utf8");
+  const data = fs.readFileSync(path.join("./build", "index.html"), "utf8");
   return data.replace("<div id=\"app\"></div>", `<div id="app">${html}</div>`);
 }
 
