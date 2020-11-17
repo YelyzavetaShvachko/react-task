@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: 'serverRenderer.js',
     libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, 'build')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
