@@ -6,10 +6,10 @@ import store from '../store/store';
 import HomePage from './HomePage';
 import PageNotFound from './PageNotFound';
 
-function App() {
+function App({ Router, location, context }) {
   return (
     <Provider store={store}>
-      <Router>
+      <Router location={location} context={context}>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/film/:id" render={(props) => <HomePage {...props} />} />  
