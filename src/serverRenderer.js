@@ -1,13 +1,13 @@
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { StaticRouter } from "react-router";
-import fs from "fs";
-import path from "path";
-import App from "../src/components/App";
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router';
+import fs from 'fs';
+import path from 'path';
+import App from '../src/components/App';
 
 function renderHtml(html) {
-  const data = fs.readFileSync(path.join("./build", "index.html"), "utf8");
-  return data.replace("<div id=\"app\"></div>", `<div id="app">${html}</div>`);
+  const data = fs.readFileSync(path.join('./build', 'index.html'), 'utf8');
+  return data.replace('<div id="app"></div>', `<div id="app">${html}</div>`);
 }
 
 export default function serverRenderer() {

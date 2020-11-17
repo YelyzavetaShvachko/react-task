@@ -81,15 +81,17 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(gif|png|jpe?g)$/i,
+                test: /\.(png|svg|jpe?g|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
-                        options: { name: 'img/[name].[ext]' }
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/',
+                        },
                     },
-                    'image-webpack-loader'
                 ],
-            }
+            },
         ]
     }
 };

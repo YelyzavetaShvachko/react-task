@@ -53,7 +53,7 @@
   "scripts": {
     "start": "concurrently \"npm run start:dev\" \"yarn run start:db\"",
     "test": "node scripts/test.js --watchAll --no-cache --coverage",
-    "start:server": "cross-env NODE_ENV=dev node ./server",
+    "start:server": "cross-env NODE_ENV=dev node server.js",
     "build:server": "cross-env NODE_ENV=dev webpack --config ./webpack.config.server.js",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --history-api-fallback --watch",
     "build:dev": "cross-env NODE_ENV=development webpack",
